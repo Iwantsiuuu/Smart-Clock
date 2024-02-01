@@ -43,4 +43,6 @@ void interface_clear(interface_t *interface_menu);
 void interface_cursor(interface_t *interface_menu, uint8_t cursor);
 void interface_setTitle(interface_t *interface_menu, const char *title);
 
+extern interface_t interface_obj;
+
 #endif

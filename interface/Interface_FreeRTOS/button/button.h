@@ -25,6 +25,8 @@
 #define DOUBLE_PRESSED_btn		2
 #define HELD_btn 		 		100
 #define RELEASED_btn			101
+#define NUM_OF_BTN 				(4)
+
 
 typedef struct button_var_t
 {
@@ -86,5 +88,7 @@ typedef struct __attribute__ ((__packed__)) button_funct{
 }buttonF;
 
 extern buttonF button;
+
+extern button_var btn_obj[NUM_OF_BTN];
 
 #endif /* LIB_BUTTON_BUTTON_H_ */
