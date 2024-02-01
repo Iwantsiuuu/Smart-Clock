@@ -2,7 +2,7 @@
 #include "interface.h"
 #include "menuDisp.h"
 
-//interface_t interface_obj;
+interface_t interface_obj;
 
 void displayOled(void *arg){
 
@@ -18,6 +18,9 @@ void displayOled(void *arg){
 	cyhal_i2c_init(&i2c, P6_1, P6_0, NULL);
 	cyhal_i2c_configure(&i2c, &i2c_cfg);
 
+	interface_construct(&interface_obj, &i2c);
+	interface_begin(&interface_obj);
+
 	//	while (!systemReady){
 	//		vTaskDelay(5);
 	//	}
@@ -25,6 +28,7 @@ void displayOled(void *arg){
 	button.attachPressed(&btn_obj[1],test_CB);
 	while(1){
 
+		GUI_DispStringAt("Hallo", 10, 20);
 		vTaskDelay(100);
 	}
 }

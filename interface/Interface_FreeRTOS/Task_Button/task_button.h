@@ -25,7 +25,7 @@ typedef enum buttonCode {
 	BUTTON_BACK 	= 3
 }BTN_CODE;
 
-extern bool systemReady;
+//extern bool systemReady;
 
 void ButtonApp(void *arg);
 void cb();
