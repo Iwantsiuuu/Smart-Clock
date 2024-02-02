@@ -14,8 +14,8 @@
 #include "interface.h"
 #include "button.h"
 
-#include "Task_Button/task_button.h"
-#include "Task_Interface/task_interface.h"
+#include "task_button.h"
+#include "task_interface.h"
 
 #define taskPriority  		(6)
 

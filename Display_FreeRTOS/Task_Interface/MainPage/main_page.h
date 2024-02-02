@@ -11,14 +11,17 @@
 #include "queue.h"
 #include "task.h"
 
-//#include "interface.h"
+#include "interface.h"
 #include "button.h"
 #include "task_button.h"
 
 //extern cyhal_i2c_t i2c;
 //cyhal_i2c_t i2c;
 
-void test_CB();
-void displayOled(void *arg);
+void main_page();
+void init_main();
+
+//void test_CB();
+//void displayOled(void *arg);
 
 #endif
