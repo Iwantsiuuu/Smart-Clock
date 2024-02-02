@@ -20,10 +20,10 @@ void init_menu_disp();
 void deinit_menu_disp();
 void menu();
 
-static void up_Cb(void *arg);
-static void down_Cb(void *arg);
-static void ok_Cb(void *arg);
-static void back_Cb(void *arg);
+static void up_Cb();
+static void down_Cb();
+static void ok_Cb();
+static void back_Cb();
 
 
 #endif

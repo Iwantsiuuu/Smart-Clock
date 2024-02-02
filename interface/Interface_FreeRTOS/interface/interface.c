@@ -1,6 +1,8 @@
 #include <string.h>
 #include "interface.h"
 
+interface_t interface_obj;
+
 // Function success
 void interface_construct(interface_t *interface_menu, cyhal_i2c_t *i2c){
 	interface_menu->i2c = i2c;

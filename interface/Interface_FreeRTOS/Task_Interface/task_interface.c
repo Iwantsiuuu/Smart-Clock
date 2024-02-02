@@ -2,7 +2,7 @@
 #include "interface.h"
 #include "menuDisp.h"
 
-interface_t interface_obj;
+//interface_t interface_obj;
 
 void displayOled(void *arg){
 
@@ -26,8 +26,11 @@ void displayOled(void *arg){
 	//	}
 
 	button.attachPressed(&btn_obj[1],test_CB);
+	uint32_t tick = 0;
 	while(1){
-
+		tick++;
+		if (tick%10 == 0)
+			printf("tick\r\n");
 		GUI_DispStringAt("Hallo", 10, 20);
 		vTaskDelay(100);
 	}

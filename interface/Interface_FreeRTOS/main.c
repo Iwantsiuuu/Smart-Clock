@@ -47,8 +47,8 @@ int main(void)
 
 	cy_retarget_io_init(P5_1, P5_0, CY_RETARGET_IO_BAUDRATE);
 
-	xTaskCreate(ButtonApp, "ButtonApp", 1024*2, NULL, taskPriority-1, &buttonHandle);
-	xTaskCreate(displayOled, "DisplayApp", 1024*2, NULL, (taskPriority), &displayHandle);
+	xTaskCreate(ButtonApp, "ButtonApp", 1024*2, NULL, taskPriority, &buttonHandle);
+	xTaskCreate(displayOled, "DisplayApp", 1024*2, NULL, (taskPriority-1), &displayHandle);
 
 	vTaskStartScheduler();
 

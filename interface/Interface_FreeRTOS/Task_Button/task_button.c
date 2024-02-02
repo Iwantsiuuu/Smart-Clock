@@ -52,7 +52,7 @@ void ButtonApp(void *arg){
 		if (btn_num >= NUM_OF_BTN)
 			btn_num = 0;
 
-		vTaskDelay(1);
+		vTaskDelay(2);
 
 	}
 }
