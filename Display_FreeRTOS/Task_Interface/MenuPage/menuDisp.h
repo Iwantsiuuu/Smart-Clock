@@ -12,14 +12,17 @@
 #include "task.h"
 
 //#include "interface.h"
-#include "button.h"
+//#include "button.h"
 #include "task_button.h"
 #include "task_interface.h"
+#include "main_page.h"
+#define MENU_PAGE_ID (2)
 
 void loop_menu_disp();
 void init_menu_disp();
 void deinit_menu_disp();
 void menu_disp();
+void menu_enter(uint8_t disp);
 
 static void up_Cb();
 static void down_Cb();

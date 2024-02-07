@@ -13,7 +13,6 @@
 #endif
 
 typedef struct interface {
-	cyhal_i2c_t *i2c;
 
 	uint8_t total_menu;
 	uint8_t position;
@@ -26,7 +25,7 @@ typedef struct interface {
 	uint8_t cursor;
 }interface_t;
 
-void interface_construct(interface_t *interface_menu, cyhal_i2c_t *i2c);
+void interface_construct(interface_t *interface_menu);
 void interface_begin(interface_t *interface_menu);
 void interface_next(interface_t *interface_menu);
 void interface_previous(interface_t *interface_menu);

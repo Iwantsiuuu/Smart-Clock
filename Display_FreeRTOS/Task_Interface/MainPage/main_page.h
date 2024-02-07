@@ -11,17 +11,19 @@
 #include "queue.h"
 #include "task.h"
 
-#include "interface.h"
 #include "button.h"
 #include "task_button.h"
+#include "task_interface.h"
+#include "menuDisp.h"
 
-//extern cyhal_i2c_t i2c;
-//cyhal_i2c_t i2c;
+#define MAIN_PAGE_ID (1)
 
 void main_page();
-void init_main();
+void deinit_main_page();
 
-//void test_CB();
-//void displayOled(void *arg);
+void tempVal(uint8_t val);
+
+void enter_menu_cb();
+void wake_up_cb();
 
 #endif

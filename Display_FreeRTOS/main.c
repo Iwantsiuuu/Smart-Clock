@@ -8,14 +8,9 @@
 #include "queue.h"
 #include "task.h"
 
-#include "GUI.h"
-#include "mtb_ssd1306.h"
-
-#include "interface.h"
-#include "button.h"
-
 #include "task_button.h"
 #include "task_interface.h"
+#include "task_bmp280.h"
 
 #define taskPriority  		(6)
 

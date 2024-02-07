@@ -4,8 +4,7 @@
 //interface_t interface_obj;
 
 // Function success
-void interface_construct(interface_t *interface_menu, cyhal_i2c_t *i2c){
-	interface_menu->i2c = i2c;
+void interface_construct(interface_t *interface_menu){
 	interface_menu->menu = NULL;
 	interface_menu->total_menu = 0;
 	interface_menu->position = 0;
@@ -16,11 +15,7 @@ void interface_construct(interface_t *interface_menu, cyhal_i2c_t *i2c){
 // Function success
 void interface_begin(interface_t *interface_menu){
 	interface_menu->position = 0;
-	uint8_t rslt;
-	rslt = mtb_ssd1306_init_i2c(interface_menu->i2c);
-	if (rslt == 0)printf("Init i2c for oled ssd1306\r\n");
-	rslt = GUI_Init();
-	if (rslt == 0)printf("Init GUI Succes\r\n");
+//	GUI_Init();
 }
 
 void interface_draw_menu(interface_t *interface_menu){

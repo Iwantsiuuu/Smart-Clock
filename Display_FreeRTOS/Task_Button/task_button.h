@@ -28,8 +28,7 @@ typedef enum buttonCode {
 extern bool systemReady;
 
 void ButtonApp(void *arg);
-void cb();
-extern button_var btn_obj[NUM_OF_BTN];
 
+extern button_var btn_obj[NUM_OF_BTN];
 
 #endif

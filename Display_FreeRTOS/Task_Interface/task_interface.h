@@ -15,10 +15,13 @@
 #include "button.h"
 #include "task_button.h"
 
-extern cyhal_i2c_t i2c;
+extern uint8_t this_page;
+
+//extern cyhal_i2c_t i2c;
 //cyhal_i2c_t i2c;
 
-void test_CB();
+//void test_CB();
+//void deinit_CB();
 void displayOled(void *arg);
 
 #endif

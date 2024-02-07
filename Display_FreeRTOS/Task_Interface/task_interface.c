@@ -1,8 +1,10 @@
 #include "task_interface.h"
+#include "main_page.h"
 #include "interface.h"
 #include "menuDisp.h"
 
 cyhal_i2c_t i2c;
+uint8_t this_page = 0;
 
 void displayOled(void *arg){
 
@@ -16,25 +18,19 @@ void displayOled(void *arg){
 	cyhal_i2c_init(&i2c, P6_1, P6_0, NULL);
 	cyhal_i2c_configure(&i2c, &i2c_cfg);
 
-		while (!systemReady){
-			vTaskDelay(5);
-		}
-		menu_disp();
+	mtb_ssd1306_init_i2c(&i2c);
+	GUI_Init();
+	GUI_Clear();
 
-//	button.attachPressed(&btn_obj[1],test_CB);
-//	uint32_t tick = 0;
+	while (!systemReady){
+		vTaskDelay(5);
+	}
 
 	while(1){
+			main_page();
+		if (this_page == MENU_PAGE_ID)
+			menu_disp();
 
-//		tick++;
-//		if (tick%10 == 0)
-//			printf("tick\r\n");
-//		GUI_DispStringAt("Hallo", 10, 20);
-
-		vTaskDelay(100);
+		vTaskDelay(10);
 	}
-}
-
-void test_CB(){
-	printf("This Task Interface\r\n");
 }
