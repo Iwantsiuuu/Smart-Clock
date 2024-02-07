@@ -13,6 +13,8 @@
 
 #include "BMP280.h"
 
+extern float temp,press;
+
 void bmp280_data(void *arg);
 
 #endif

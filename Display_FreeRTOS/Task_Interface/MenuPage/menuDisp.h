@@ -18,7 +18,6 @@
 #include "main_page.h"
 #define MENU_PAGE_ID (2)
 
-void loop_menu_disp();
 void init_menu_disp();
 void deinit_menu_disp();
 void menu_disp();

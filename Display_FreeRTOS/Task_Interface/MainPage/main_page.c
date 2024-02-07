@@ -2,19 +2,19 @@
 #include "stdio.h"
 
 char volatile buf_time_date [20];
-uint8_t temp = 0;
+uint8_t Temps = 0;
 uint8_t x, y;
 
-void tempVal(uint8_t val){
-	temp += val;
+void TempsVal(uint8_t val){
+	Temps += val;
 }
 
 void main_page(){
 	init_main_page();
 	while (1){
-		tempVal(1);
+		TempsVal(1);
 		if (this_page == MAIN_PAGE_ID){
-			sprintf(buf_time_date,"%4d C\xB0\r\n", temp);
+			sprintf(buf_time_date,"%4d C\xB0\r\n", Temps);
 			GUI_DispStringAt("80%", x+110, y+0);
 			GUI_DispStringAt("08:00 am", x+35, y+20);
 			GUI_DispStringAt("Feb 5, 2024", x+30, y+30);

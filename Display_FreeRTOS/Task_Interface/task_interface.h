@@ -17,11 +17,6 @@
 
 extern uint8_t this_page;
 
-//extern cyhal_i2c_t i2c;
-//cyhal_i2c_t i2c;
-
-//void test_CB();
-//void deinit_CB();
 void displayOled(void *arg);
 
 #endif
