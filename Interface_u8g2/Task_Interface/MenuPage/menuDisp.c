@@ -61,25 +61,24 @@ void menu_sel(uint8_t act){
 }*/
 
 void menu_enter(uint8_t disp){
-	//	deinit_menu_disp();
-	uint8_t x = 0, y = 0;
 	switch(disp){
 	case TIME_DATE :
 		//		Function setting time and date
 //		GUI_DispStringAt("Time and Date", x+10, y+15);
-		break;
+//		break;
 	case ENVIRONMENT :
 		//		Function BMP Value
+		THIS_PAGE = ENVIRONMENT_PAGE_ID;
 		environment_disp();
-		break;
+//		break;
 	case AIRQUALITY :
 		//		Function PASCO2
 //		GUI_DispStringAt("Air Quality", x+10, y+35);
-		break;
+//		break;
 	case STOPWATCH :
 		//		Function StopWatch
 //		GUI_DispStringAt("StopWatch", x+10, y+45);
-		break;
+//		break;
 	}
 }
 
@@ -114,6 +113,7 @@ void menu_disp(){
 		else
 			interface_draw_menu(&menuObj);
 		u8g2_SendBuffer(&u8g2);
+		u8g2_ClearBuffer(&u8g2);
 		vTaskDelay(20);
 	}
 	deinit_menu_disp();

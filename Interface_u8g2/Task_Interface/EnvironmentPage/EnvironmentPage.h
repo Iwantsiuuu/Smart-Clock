@@ -24,6 +24,8 @@ void init_environment_disp();
 void deinit_environment_disp();
 void environment_disp();
 void environment_draw(float *Press, float *Temp);
+void just_draw();
+
 
 static void select_Cb();
 static void prev_Cb();

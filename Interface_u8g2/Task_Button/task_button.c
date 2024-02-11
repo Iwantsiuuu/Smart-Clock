@@ -28,7 +28,7 @@ void ButtonApp(void *arg){
 	uint8_t btn_num = 0;
 
 	for(;;){
-		printf("TaskBtn\r\n");
+
 		button.check(&btn_obj[btn_num]);
 		btn_num++;
 		if (btn_num >= NUM_OF_BTN)

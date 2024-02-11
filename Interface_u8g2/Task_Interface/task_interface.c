@@ -25,6 +25,7 @@ void displayOled(void *arg){
 	}
 
 	while(1){
+		printf("Task Oled\r\n");
 		main_page();
 		if (THIS_PAGE == MENU_PAGE_ID)
 			menu_disp();
