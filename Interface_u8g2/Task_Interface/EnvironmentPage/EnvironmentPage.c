@@ -1,30 +1,21 @@
 #include "EnvironmentPage.h"
 #include "menuDisp.h"
 
-u8g2_t u8g2_obj1;
-uint8_t id_envr;
-uint8_t idx_back = 150;
+#define ENVI_PAGE 1
+
+static char dps_buf_pressure[20],dps_buf_temperatur[20];
+
+static uint8_t THIS_PAGE = 0;
+static uint8_t idx_back = ENVI_PAGE+1;
 
 void init_environment_disp(){
 
 	button.attachPressed(&btn_obj[3],prev_Cb);
 
-	THIS_PAGE = ENVIRONMENT_PAGE_ID;
+	u8g2_ClearDisplay(&u8g2_obj);
+	u8g2_ClearBuffer(&u8g2_obj);
 
-	/* Initialize the U8 Display */
-	u8g2_Setup_ssd1306_i2c_128x64_noname_f(&u8g2_obj1, U8G2_R0, u8x8_byte_hw_i2c,
-			u8x8_gpio_and_delay_cb);
-	/* Send init sequence to the display, display is in sleep mode after this */
-	u8g2_InitDisplay(&u8g2_obj1);
-	/* Wake up display */
-	u8g2_SetPowerSave(&u8g2_obj1, 0);
-
-	/* Prepare display for printing */
-	u8g2_SetFont(&u8g2_obj1, u8g2_font_6x12_tf);
-	u8g2_ClearDisplay(&u8g2_obj1);
-	u8g2_ClearBuffer(&u8g2_obj1);
-
-	id_envr=255;
+	THIS_PAGE = ENVI_PAGE;
 }
 
 void deinit_environment_disp(){
@@ -32,32 +23,35 @@ void deinit_environment_disp(){
 	//	Melakukan deattach button
 	button.dettachPressed(&btn_obj[3]);//BACK
 
-	u8g2_ClearDisplay(&u8g2_obj1);
-	u8g2_ClearBuffer(&u8g2_obj1);
+	u8g2_ClearDisplay(&u8g2_obj);
+	u8g2_ClearBuffer(&u8g2_obj);
 }
 
-void environment_draw(float *Press, float *Temp){
-	u8g2_DrawStr(&u8g2_obj1, 20, 30, "Tess");
+void environment_getVal(){
+	sprintf(dps_buf_pressure  ,"Pres :%0.2f\t hPa",dps_sensor.pressure);
+	sprintf(dps_buf_temperatur,"Temp :%0.2f\t C\xB0",dps_sensor.temperature);
 }
 
-void just_draw(){
-	u8g2_DrawStr(&u8g2_obj1, 20, 30, "Tess");
+void environment_draw(){
+	environment_getVal();
+	u8g2_DrawStr(&u8g2_obj, 0, 10, "Environment Data");
+	u8g2_DrawStr(&u8g2_obj, 0, 30, dps_buf_pressure);
+	u8g2_DrawStr(&u8g2_obj, 0, 40, dps_buf_temperatur);
+	send_buffer_u8g2();
 }
 
 void environment_disp(){
 
 	init_environment_disp();
-	deinit_menu_disp();
+
 	while (1){
+		if (THIS_PAGE == ENVI_PAGE)
+			environment_draw();
 
-		if (THIS_PAGE == ENVIRONMENT_PAGE_ID)
-			just_draw();
-
-		if (id_envr == idx_back)
+		else {
+			deinit_environment_disp();
 			menu_disp();
-//			break;
-		u8g2_ClearBuffer(&u8g2_obj1);
-
+		}
 		vTaskDelay(20);
 	}
 	deinit_environment_disp();
@@ -65,10 +59,5 @@ void environment_disp(){
 
 static void prev_Cb(){
 
-	id_envr = idx_back; //index_back
-
-	//	jika page berada di menu page, maka akan kembali ke main page
-	if (THIS_PAGE == ENVIRONMENT_PAGE_ID)
-		THIS_PAGE = MENU_PAGE_ID;
-
+	THIS_PAGE = idx_back; //index_back
 }

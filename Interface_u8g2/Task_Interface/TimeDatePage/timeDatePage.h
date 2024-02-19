@@ -1,23 +1,12 @@
-//#ifndef MENUDISP_H_
-//#define MENUDISP_H_
-//
-//#include "cyhal.h"
-//#include "cybsp.h"
-//#include "cy_retarget_io.h"
-//
-///*Include FreeRTOS*/
-//#include "FreeRTOS.h"
-//#include "FreeRTOSConfig.h"
-//#include "queue.h"
-//#include "task.h"
-//
-////#include "interface.h"
-////#include "button.h"
-//#include "task_button.h"
-//#include "task_interface.h"
-//#include "main_page.h"
-//#define MENU_PAGE_ID (2)
-//
+#ifndef TIMEDATEPAGE_H_
+#define TIMEDATEPAGE_H_
+
+#include "interface.h"
+#include "task_button.h"
+#include "task_interface.h"
+#include "main_page.h"
+
+void setTimeDate();
 //void loop_menu_disp();
 //void init_menu_disp();
 //void deinit_menu_disp();
@@ -28,5 +17,5 @@
 //static void down_Cb();
 //static void ok_Cb();
 //static void back_Cb();
-//
-//#endif
+
+#endif

@@ -1,25 +1,25 @@
-#include "cyhal.h"
-#include "cybsp.h"
-#include "cy_retarget_io.h"
-
-/*Include FreeRTOS*/
-#include "FreeRTOS.h"
-#include "FreeRTOSConfig.h"
-#include "queue.h"
-#include "task.h"
+#include "main.h"
+#include "interface.h"
 
 #include "task_button.h"
 #include "task_interface.h"
-#include "task_bmp280.h"
+#include "task_sensor.h"
 
 #define taskPriority  		(6)
+
+// task handler
+TaskHandle_t buttonHandle;
+TaskHandle_t displayHandle;
+TaskHandle_t sensorHandle;
+
+// semaphore
+SemaphoreHandle_t semphr_i2c_dev;
+
+bool systemReady = false;
 
 int main(void)
 {
 	cy_rslt_t result;
-
-	TaskHandle_t buttonHandle;
-	TaskHandle_t displayHandle;
 
 #if defined (CY_DEVICE_SECURE)
 	cyhal_wdt_t wdt_obj;
@@ -39,11 +39,17 @@ int main(void)
 
 	/* Enable global interrupts */
 	__enable_irq();
+// initialize peripheral
 
 	cy_retarget_io_init(P5_1, P5_0, CY_RETARGET_IO_BAUDRATE);
-
+	initialize_i2c();
+// task initialize
+	semphr_i2c_dev = xSemaphoreCreateMutex();
+	if (semphr_i2c_dev != NULL)
+		xSemaphoreGive(semphr_i2c_dev);
 	xTaskCreate(ButtonApp, "ButtonApp", 1024*2, NULL, taskPriority, &buttonHandle);
 	xTaskCreate(displayOled, "DisplayApp", 1024*2, NULL, (taskPriority-1), &displayHandle);
+	xTaskCreate(sensor_App, "Sensor", 1024*2, NULL, (taskPriority-3), &sensorHandle);
 
 	vTaskStartScheduler();
 

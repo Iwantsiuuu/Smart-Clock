@@ -9,7 +9,7 @@ cyhal_gpio_t btn_pin[NUM_OF_BTN] = {
 		BTN_BACK
 };
 
-bool systemReady = false;
+
 void ButtonApp(void *arg){
 
 	button.setTick(xTaskGetTickCount);
@@ -21,10 +21,10 @@ void ButtonApp(void *arg){
 
 	for (uint8_t i = 0; i < NUM_OF_BTN; i++){
 		if( button.create(&btn_obj[i], btn_pin[i], BUTTON_LOW, 200) == CY_RSLT_SUCCESS )
-			printf(" button initialize success \r\n");
+			printf(" button %i initialize success \r\n", i+1);
 	}
 
-	systemReady = true;
+
 	uint8_t btn_num = 0;
 
 	for(;;){
@@ -33,7 +33,6 @@ void ButtonApp(void *arg){
 		btn_num++;
 		if (btn_num >= NUM_OF_BTN)
 			btn_num = 0;
-
 		vTaskDelay(1);
 
 	}

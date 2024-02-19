@@ -1,32 +1,15 @@
-//#ifndef MENUDISP_H_
-//#define MENUDISP_H_
-//
-//#include "cyhal.h"
-//#include "cybsp.h"
-//#include "cy_retarget_io.h"
-//
-///*Include FreeRTOS*/
-//#include "FreeRTOS.h"
-//#include "FreeRTOSConfig.h"
-//#include "queue.h"
-//#include "task.h"
-//
-////#include "interface.h"
-////#include "button.h"
-//#include "task_button.h"
-//#include "task_interface.h"
-//#include "main_page.h"
-//#define MENU_PAGE_ID (2)
-//
-//void loop_menu_disp();
-//void init_menu_disp();
-//void deinit_menu_disp();
-//void menu_disp();
-//void menu_enter(uint8_t disp);
-//
-//static void up_Cb();
-//static void down_Cb();
-//static void ok_Cb();
-//static void back_Cb();
-//
-//#endif
+#ifndef AIRQUALITY_H_
+#define AIRQUALITY_H_
+
+#include "task_button.h"
+#include "task_interface.h"
+#include "task_sensor.h"
+
+void init_air_quality_disp();
+void deinit_air_quality_disp();
+void air_quality_disp();
+void air_quality_draw(float *Press, float *Temp);
+
+static void BackAQ_Cb();
+
+#endif

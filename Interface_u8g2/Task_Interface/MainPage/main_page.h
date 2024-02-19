@@ -5,8 +5,9 @@
 #include "interface.h"
 
 void main_page();
+void init_main_page();
 void deinit_main_page();
-
+void main_draw();
 void tempVal(uint8_t val);
 
 void enter_menu_cb();

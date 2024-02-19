@@ -1,35 +1,51 @@
 #include "task_interface.h"
 #include "menu.h"
 #include "main_page.h"
-#include "menuDisp.h"
 
-cyhal_i2c_t i2c;
-uint8_t THIS_PAGE = 0;
+u8g2_t u8g2_obj;
+
 
 void displayOled(void *arg){
 
-	const cyhal_i2c_cfg_t i2c_cfg =
-	{
-			.is_slave 		 = false,
-			.address  		 = 0,
-			.frequencyhal_hz = 400000
-	};
+	//initialize_i2c();
 
-	cyhal_i2c_init(&i2c, P6_1, P6_0, NULL);
-	cyhal_i2c_configure(&i2c, &i2c_cfg);
 
-	mtb_ssd1306_init_i2c(&i2c);
 
 	while (!systemReady){
 		vTaskDelay(5);
 	}
+	mtb_ssd1306_init_i2c(&i2c);
+	init_u8g2();
 
 	while(1){
-		printf("Task Oled\r\n");
 		main_page();
-		if (THIS_PAGE == MENU_PAGE_ID)
-			menu_disp();
-
 		vTaskDelay(10);
+	}
+}
+
+void init_u8g2(){
+	/* Initialize the U8 Display */
+	u8g2_Setup_ssd1306_i2c_128x64_noname_f(&u8g2_obj, U8G2_R0, u8x8_byte_hw_i2c,
+			u8x8_gpio_and_delay_cb);
+
+	/* Send init sequence to the display, display is in sleep mode after this */
+	u8g2_InitDisplay(&u8g2_obj);
+
+	/* Wake up display */
+	u8g2_SetPowerSave(&u8g2_obj, 0);
+
+	/* Prepare display for printing */
+	u8g2_SetFont(&u8g2_obj, u8g2_font_6x12_tf);
+	u8g2_ClearDisplay(&u8g2_obj);
+	u8g2_ClearBuffer(&u8g2_obj);
+}
+
+void send_buffer_u8g2(){
+	if (semphr_i2c_dev != NULL){
+		if(xSemaphoreTake(semphr_i2c_dev, ( TickType_t ) 10)){	// 1000 kelamaan
+			u8g2_SendBuffer(&u8g2_obj);
+			u8g2_ClearBuffer(&u8g2_obj);
+			xSemaphoreGive(semphr_i2c_dev);
+		}
 	}
 }

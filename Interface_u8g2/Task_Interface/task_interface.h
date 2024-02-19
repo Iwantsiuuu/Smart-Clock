@@ -2,9 +2,11 @@
 #define TASK_INTERFACE_H_
 
 #include "interface.h"
+#include "main.h"
+extern u8g2_t u8g2_obj;
 
-extern uint8_t THIS_PAGE;
-
+void init_u8g2();
+void send_buffer_u8g2();
 void displayOled(void *arg);
 
 #endif

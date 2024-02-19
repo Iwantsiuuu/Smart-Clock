@@ -1,10 +1,10 @@
-#ifndef I2C_INIT_H_
-#define I2C_INIT_H_
+#ifndef SETUP_I2C_H_
+#define SETUP_I2C_H_
 
 #include "cyhal.h"
 #include "cybsp.h"
 
-extern cyhal_i2c_t i2c_sens;
+extern cyhal_i2c_t i2c;
 
 void initialize_i2c();
 
