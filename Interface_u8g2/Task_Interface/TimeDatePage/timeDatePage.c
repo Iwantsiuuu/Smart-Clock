@@ -54,7 +54,8 @@ void deinit_rtc_disp(){
 }
 
 static void rtc_draw(){
-
+	u8g2_DrawStr(&u8g2_obj, 30, 35, "Feb 5, 2024");
+	send_buffer_u8g2();
 }
 
 void rtc_disp(){

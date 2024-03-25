@@ -6,7 +6,7 @@
 
 static void init_rtc_disp();
 static void deinit_rtc_disp();
-static void rtc_disp();
+void rtc_disp();
 static void rtc_draw();
 
 static void increment_var_cb();

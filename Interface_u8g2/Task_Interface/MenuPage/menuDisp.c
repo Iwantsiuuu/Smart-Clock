@@ -2,6 +2,7 @@
 #include "menu.h"
 #include "EnvironmentPage.h"
 #include "airQualityPage.h"
+#include "timeDatePage.h"
 
 #define tot_menu 4
 
@@ -16,7 +17,7 @@ typedef enum {
 	ENVIRONMENT,
 	AIRQUALITY,
 	STOPWATCH
-};
+}menu_var;
 
 const char *menTest[]={
 		"TIME AND DATE",
@@ -56,6 +57,7 @@ void menu_enter(uint8_t disp){
 	switch(disp){
 	case TIME_DATE :
 		//		Function setting time and date
+		rtc_disp();
 		break;
 	case ENVIRONMENT :
 		//		Function BMP Value
