@@ -1,6 +1,7 @@
 #include "main.h"
 #include "interface.h"
 
+#include "rtc_sc.h"
 #include "task_button.h"
 #include "task_interface.h"
 #include "task_sensor.h"
@@ -19,7 +20,10 @@ bool systemReady = false;
 
 int main(void)
 {
+	struct tm RTC_MAIN;
+	char bufff[80];
 	cy_rslt_t result;
+	RTC_Setup.Year = 2000;
 
 #if defined (CY_DEVICE_SECURE)
 	cyhal_wdt_t wdt_obj;
@@ -39,14 +43,18 @@ int main(void)
 
 	/* Enable global interrupts */
 	__enable_irq();
-// initialize peripheral
 
+// initialize peripheral
 	cy_retarget_io_init(P5_1, P5_0, CY_RETARGET_IO_BAUDRATE);
 	initialize_i2c();
+
+	result = cyhal_rtc_init(&rtc_obj);
+
 // task initialize
 	semphr_i2c_dev = xSemaphoreCreateMutex();
 	if (semphr_i2c_dev != NULL)
 		xSemaphoreGive(semphr_i2c_dev);
+
 	xTaskCreate(ButtonApp, "ButtonApp", 1024*2, NULL, taskPriority, &buttonHandle);
 	xTaskCreate(displayOled, "DisplayApp", 1024*2, NULL, (taskPriority-1), &displayHandle);
 	xTaskCreate(sensor_App, "Sensor", 1024*2, NULL, (taskPriority-3), &sensorHandle);

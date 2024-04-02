@@ -13,7 +13,7 @@ void initialize_i2c(){
 
     cy_rslt_t result;
 
-	result = cyhal_i2c_init(&i2c, P6_1, P6_0, NULL);
+	result = cyhal_i2c_init(&i2c, CYBSP_I2C_SDA, CYBSP_I2C_SCL, NULL);
     if (result != CY_RSLT_SUCCESS)
     {
         CY_ASSERT(0);

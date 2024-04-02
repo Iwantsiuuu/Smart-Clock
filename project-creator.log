@@ -1,7 +1,7 @@
 Loading the ModusToolbox Technology Packs and Early Access Packs
 Finished loading the ModusToolbox Technology Packs and Early Access Packs (2 ms)
 Loading the tools information
-Finished loading the tools information (20 ms)
+Finished loading the tools information (62 ms)
 Loading the manifest data
 Loading super manfiest files from all sources
 Getting manifests from remote and/or local sources
@@ -16,6 +16,7 @@ Downloading manifest file 'https://github.com/Infineon/mtb-ce-manifest/raw/v2.X/
 Downloading manifest file 'https://github.com/Infineon/mtb-bt-app-manifest/raw/v2.X/mtb-bt-app-manifest.xml'
 Downloading manifest file 'https://github.com/Infineon/mtb-bt-app-manifest/raw/v2.X/mtb-bt-app-manifest-fv2.xml'
 Downloading manifest file 'https://github.com/Infineon/cce-app-manifest/raw/v2.X/cce-app-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/Altia-Marketing/altia-ce-manifest/raw/main/altia-ce-manifest-fv2.xml'
 Downloading manifest file 'https://github.com/CyberonEBU/cyberon-mtb-ce-manifest/raw/main/cyberon-mtb-ce-manifest-fv2.xml'
 Downloading manifest file 'https://github.com/golioth/mtb-golioth-ce-manifest/raw/main/mtb-golioth-ce-manifest-fv2.xml'
 Downloading manifest file 'https://github.com/memfault/mtb-memfault-ce-manifest/raw/main/mtb-memfault-ce-manifest-fv2.xml'
@@ -48,6 +49,7 @@ Finished download of file 'https://github.com/Infineon/mtb-ce-manifest/raw/v2.X/
 Finished download of file 'https://github.com/Infineon/mtb-bt-app-manifest/raw/v2.X/mtb-bt-app-manifest.xml'
 Finished download of file 'https://github.com/Infineon/mtb-bt-app-manifest/raw/v2.X/mtb-bt-app-manifest-fv2.xml'
 Finished download of file 'https://github.com/Infineon/cce-app-manifest/raw/v2.X/cce-app-manifest-fv2.xml'
+Finished download of file 'https://github.com/Altia-Marketing/altia-ce-manifest/raw/main/altia-ce-manifest-fv2.xml'
 Finished download of file 'https://github.com/CyberonEBU/cyberon-mtb-ce-manifest/raw/main/cyberon-mtb-ce-manifest-fv2.xml'
 Finished download of file 'https://github.com/golioth/mtb-golioth-ce-manifest/raw/main/mtb-golioth-ce-manifest-fv2.xml'
 Finished download of file 'https://github.com/memfault/mtb-memfault-ce-manifest/raw/main/mtb-memfault-ce-manifest-fv2.xml'
@@ -75,128 +77,130 @@ Finished download of file 'https://github.com/CyberonEBU/cyberon-mtb-mw-manifest
 Finished download of file 'https://github.com/golioth/mtb-golioth-mw-manifest/raw/main/mtb-golioth-mw-manifest-fv2.xml'
 Finished download of file 'https://github.com/memfault/mtb-memfault-mw-manifest/raw/main/mtb-memfault-mw-manifest-fv2.xml'
 Finished download of file 'https://github.com/sensiml/sensiml-mw-manifest/raw/main/sensiml-mw-manifest-fv2.xml'
-Finished loading the manifest data (10316 ms)
+Finished loading the manifest data (5487 ms)
 Loading the device db
-Finished loading the device db (41664 ms)
+Finished loading the device db (9546 ms)
 0 error(s), 0 warning(s)
 
 Summary: 
 
-BSP: CY8CKIT-062S2-43012
-Template Application(s): u8g2_Oled
-Application(s) Root Path: D:/Project
+BSP: CYBLE-416045-EVAL
+Template Application(s): Interface_u8g2
+Application(s) Root Path: C:/Users/bahariridwan/Smart-Clock
 
 Press "Create" to create the selected application(s).
 
 Collecting application data...
 
 Info: The following entered on the command line will create the exact same project as that created with the GUI tool:
-C:/ModusToolbox/tools_3.1/project-creator/project-creator-cli.exe --board-id CY8CKIT-062S2-43012 --board-uri https://github.com/cypresssemiconductorco/TARGET_CY8CKIT-062S2-43012 --board-commit latest-v4.X --app-path D:/MTB/u8g2_Oled --target-dir D:/Project --user-app-name Interface_u8g2 --use-modus-shell
+C:/Users/bahariridwan/ModusToolbox/tools_3.1/project-creator/project-creator-cli.exe --board-id CYBLE-416045-EVAL --board-uri https://github.com/cypresssemiconductorco/TARGET_CYBLE-416045-EVAL --board-commit latest-v4.X --app-path C:/Users/bahariridwan/Smart-Clock/Interface_u8g2 --target-dir C:/Users/bahariridwan/Smart-Clock --user-app-name Interface_u8g2_CYBLE_416045 --use-modus-shell
 
-Starting application creation for 'D:/Project/Interface_u8g2'.
-Acquiring the application source 'D:/MTB/u8g2_Oled'.
-Copying D:/MTB/u8g2_Oled to D:/Project/Interface_u8g2.
-Copied D:/MTB/u8g2_Oled to D:/Project/Interface_u8g2.
+Starting application creation for 'C:/Users/bahariridwan/Smart-Clock/Interface_u8g2_CYBLE_416045'.
+Acquiring the application source 'C:/Users/bahariridwan/Smart-Clock/Interface_u8g2'.
+Copying C:/Users/bahariridwan/Smart-Clock/Interface_u8g2 to C:/Users/bahariridwan/Smart-Clock/Interface_u8g2_CYBLE_416045.
+Copied C:/Users/bahariridwan/Smart-Clock/Interface_u8g2 to C:/Users/bahariridwan/Smart-Clock/Interface_u8g2_CYBLE_416045.
 Acquired application source successfully.
 Loading the application.
 Loaded the application successfully.
-Processing project 'Interface_u8g2'.
+Processing project 'Interface_u8g2_CYBLE_416045'.
 Starting to commit changes to the filesystem and project 'mtb-example-empty-app'.
-Writing mtb file for asset 'CY8CKIT-062S2-43012' to the folder 'D:/Project/Interface_u8g2/deps'.
-Starting: git -C D:/Project/mtb_shared/display-oled-ssd1306/release-v1.0.2 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C D:/Project/mtb_shared/freertos/release-v10.5.001 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C D:/Project/mtb_shared/retarget-io/release-v1.5.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C D:/Project/mtb_shared/sensor-xensiv-dps3xx/release-v1.0.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Success: git -C D:/Project/mtb_shared/display-oled-ssd1306/release-v1.0.2 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C D:/Project/Interface_u8g2/libs clone --origin cypress --no-checkout https://github.com/cypresssemiconductorco/TARGET_CY8CKIT-062S2-43012 TARGET_CY8CKIT-062S2-43012
-Success: git -C D:/Project/mtb_shared/retarget-io/release-v1.5.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C D:/Project/mtb_shared/abstraction-rtos/release-v1.7.5 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Success: git -C D:/Project/mtb_shared/sensor-xensiv-dps3xx/release-v1.0.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C D:/Project/mtb_shared/cat1cm0p/release-v1.4.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Success: git -C D:/Project/mtb_shared/freertos/release-v10.5.001 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C D:/Project/mtb_shared/clib-support/release-v1.4.2 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Cloning into '
-TARGET_CY8CKIT-062S2-43012'...
-Success: git -C D:/Project/mtb_shared/cat1cm0p/release-v1.4.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C D:/Project/mtb_shared/cmsis/release-v5.8.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Success: git -C D:/Project/mtb_shared/clib-support/release-v1.4.2 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C D:/Project/mtb_shared/core-lib/release-v1.4.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Success: git -C D:/Project/mtb_shared/abstraction-rtos/release-v1.7.5 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C D:/Project/mtb_shared/core-make/release-v3.2.2 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Success: git -C D:/Project/mtb_shared/cmsis/release-v5.8.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C D:/Project/mtb_shared/mtb-hal-cat1/release-v2.5.4 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Success: git -C D:/Project/mtb_shared/core-make/release-v3.2.2 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C D:/Project/mtb_shared/mtb-pdl-cat1/release-v3.9.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Success: git -C D:/Project/mtb_shared/core-lib/release-v1.4.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C D:/Project/mtb_shared/recipe-make-cat1a/release-v2.1.2 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Success: git -C D:/Project/Interface_u8g2/libs clone --origin cypress --no-checkout https://github.com/cypresssemiconductorco/TARGET_CY8CKIT-062S2-43012 TARGET_CY8CKIT-062S2-43012
-Starting: git -C D:/Project/mtb_shared/display-oled-ssd1306/release-v1.0.2 -c advice.detachedHead=false checkout release-v1.0.2 --force
-Success: git -C D:/Project/mtb_shared/mtb-hal-cat1/release-v2.5.4 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C D:/Project/mtb_shared/retarget-io/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
-Success: git -C D:/Project/mtb_shared/mtb-pdl-cat1/release-v3.9.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C D:/Project/mtb_shared/sensor-xensiv-dps3xx/release-v1.0.0 -c advice.detachedHead=false checkout release-v1.0.0 --force
-Success: git -C D:/Project/mtb_shared/recipe-make-cat1a/release-v2.1.2 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C D:/Project/mtb_shared/freertos/release-v10.5.001 -c advice.detachedHead=false checkout release-v10.5.001 --force
+Writing mtb file for asset 'CYBLE-416045-EVAL' to the folder 'C:/Users/bahariridwan/Smart-Clock/Interface_u8g2_CYBLE_416045/deps'.
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/display-oled-ssd1306/release-v1.0.2 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/freertos/release-v10.5.001 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/retarget-io/release-v1.5.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/sensor-xensiv-dps3xx/release-v1.0.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/display-oled-ssd1306/release-v1.0.2 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/Interface_u8g2_CYBLE_416045/libs clone --origin cypress --no-checkout https://github.com/cypresssemiconductorco/TARGET_CYBLE-416045-EVAL TARGET_CYBLE-416045-EVAL
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/retarget-io/release-v1.5.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/abstraction-rtos/release-v1.7.5 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/freertos/release-v10.5.001 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/cat1cm0p/release-v1.4.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Cloning into 'TARGET_CYBLE-416045-EVAL'...
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/sensor-xensiv-dps3xx/release-v1.0.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/clib-support/release-v1.4.2 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bahariridwan/Smart-Clock/Interface_u8g2_CYBLE_416045/libs clone --origin cypress --no-checkout https://github.com/cypresssemiconductorco/TARGET_CYBLE-416045-EVAL TARGET_CYBLE-416045-EVAL
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/cmsis/release-v5.8.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/cat1cm0p/release-v1.4.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/core-lib/release-v1.4.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/abstraction-rtos/release-v1.7.5 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/core-make/release-v3.3.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/clib-support/release-v1.4.2 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bahariridwan/.modustoolbox/global/device-db/release-v4.11.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/cmsis/release-v5.8.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/mtb-hal-cat1/release-v2.5.4 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/core-lib/release-v1.4.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/mtb-pdl-cat1/release-v3.9.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/core-make/release-v3.3.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/recipe-make-cat1a/release-v2.2.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bahariridwan/.modustoolbox/global/device-db/release-v4.11.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/display-oled-ssd1306/release-v1.0.2 -c advice.detachedHead=false checkout release-v1.0.2 --force
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/mtb-hal-cat1/release-v2.5.4 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/retarget-io/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
 HEAD is now at d604a6f Upload display-oled-ssd1306 [347]
-Success: git -C D:/Project/mtb_shared/display-oled-ssd1306/release-v1.0.2 -c advice.detachedHead=false checkout release-v1.0.2 --force
-Starting: git -C D:/Project/mtb_shared/cat1cm0p/release-v1.4.0 -c advice.detachedHead=false checkout release-v1.4.0 --force
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/display-oled-ssd1306/release-v1.0.2 -c advice.detachedHead=false checkout release-v1.0.2 --force
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/freertos/release-v10.5.001 -c advice.detachedHead=false checkout release-v10.5.001 --force
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/recipe-make-cat1a/release-v2.2.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/sensor-xensiv-dps3xx/release-v1.0.0 -c advice.detachedHead=false checkout release-v1.0.0 --force
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/mtb-pdl-cat1/release-v3.9.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/Interface_u8g2_CYBLE_416045/libs/TARGET_CYBLE-416045-EVAL -c advice.detachedHead=false checkout release-v4.2.0 --force
 HEAD is now at db7f962 Upload retarget-io [1515]
-Success: git -C D:/Project/mtb_shared/retarget-io/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
-Starting: git -C D:/Project/mtb_shared/clib-support/release-v1.4.2 -c advice.detachedHead=false checkout release-v1.4.2 --force
-HEAD is now at ddcdedb Upload cat1cm0p 1.4.0.368 [2049]
-Success: git -C D:/Project/mtb_shared/cat1cm0p/release-v1.4.0 -c advice.detachedHead=false checkout release-v1.4.0 --force
-Starting: git -C D:/Project/mtb_shared/abstraction-rtos/release-v1.7.5 -c advice.detachedHead=false checkout release-v1.7.5 --force
-HEAD is now at 97cf620 Upload clib-support [1864]
-Success: git -C D:/Project/mtb_shared/clib-support/release-v1.4.2 -c advice.detachedHead=false checkout release-v1.4.2 --force
-Starting: git -C D:/Project/mtb_shared/cmsis/release-v5.8.0 -c advice.detachedHead=false checkout release-v5.8.0 --force
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/retarget-io/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/cat1cm0p/release-v1.4.0 -c advice.detachedHead=false checkout release-v1.4.0 --force
 HEAD is now at c2c8a9b Upload freertos 10.5.001.632 [2049]
-Success: git -C D:/Project/mtb_shared/freertos/release-v10.5.001 -c advice.detachedHead=false checkout release-v10.5.001 --force
-Starting: git -C D:/Project/mtb_shared/core-make/release-v3.2.2 -c advice.detachedHead=false checkout release-v3.2.2 --force
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/freertos/release-v10.5.001 -c advice.detachedHead=false checkout release-v10.5.001 --force
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/abstraction-rtos/release-v1.7.5 -c advice.detachedHead=false checkout release-v1.7.5 --force
 HEAD is now at bdf5a3c Upload sensor-xensiv-dps3xx 1.0.0.23328
-Success: git -C D:/Project/mtb_shared/sensor-xensiv-dps3xx/release-v1.0.0 -c advice.detachedHead=false checkout release-v1.0.0 --force
-Starting: git -C D:/Project/mtb_shared/core-lib/release-v1.4.1 -c advice.detachedHead=false checkout release-v1.4.1 --force
-HEAD is now at
- b962a1e Upload core-make 3.2.2.4739 [1647]
-Success: git -C D:/Project/mtb_shared/core-make/release-v3.2.2 -c advice.detachedHead=false checkout release-v3.2.2 --force
-Starting: git -C D:/Project/Interface_u8g2/libs/TARGET_CY8CKIT-062S2-43012 -c advice.detachedHead=false checkout release-v4.2.0 --force
-HEAD is now at a74be8b Upload core-lib [1796]
-Success: git -C D:/Project/mtb_shared/core-lib/release-v1.4.1 -c advice.detachedHead=false checkout release-v1.4.1 --force
-Starting: git -C D:/Project/mtb_shared/mtb-hal-cat1/release-v2.5.4 -c advice.detachedHead=false checkout release-v2.5.4 --force
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/sensor-xensiv-dps3xx/release-v1.0.0 -c advice.detachedHead=false checkout release-v1.0.0 --force
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/clib-support/release-v1.4.2 -c advice.detachedHead=false checkout release-v1.4.2 --force
+HEAD is now at 94ce3bf Upload TARGET_CYBLE-416045-EVAL [1515]
+Success: git -C C:/Users/bahariridwan/Smart-Clock/Interface_u8g2_CYBLE_416045/libs/TARGET_CYBLE-416045-EVAL -c advice.detachedHead=false checkout release-v4.2.0 --force
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/cmsis/release-v5.8.0 -c advice.detachedHead=false checkout release-v5.8.0 --force
+HEAD is now at ddcdedb Upload cat1cm0p 1.4.0.368 [2049]
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/cat1cm0p/release-v1.4.0 -c advice.detachedHead=false checkout release-v1.4.0 --force
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/core-lib/release-v1.4.1 -c advice.detachedHead=false checkout release-v1.4.1 --force
 HEAD is now at b679710 Upload abstraction-rtos [2106]
-Success: git -C D:/Project/mtb_shared/abstraction-rtos/release-v1.7.5 -c advice.detachedHead=false checkout release-v1.7.5 --force
-Starting: git -C D:/Project/mtb_shared/mtb-pdl-cat1/release-v3.9.0 -c advice.detachedHead=false checkout release-v3.9.0 --force
-HEAD is now at a085cc6 Upload TARGET_CY8CKIT-062S2-43012 [1515]
-Success: git -C D:/Project/Interface_u8g2/libs/TARGET_CY8CKIT-062S2-43012 -c advice.detachedHead=false checkout release-v4.2.0 --force
-Starting: git -C D:/Project/mtb_shared/recipe-make-cat1a/release-v2.1.2 -c advice.detachedHead=false checkout release-v2.1.2 --force
-HEAD is now at 0446103 Upload recipe-make-cat1a 2.1.2.4871 [1976]
-Success: git -C D:/Project/mtb_shared/recipe-make-cat1a/release-v2.1.2 -c advice.detachedHead=false checkout release-v2.1.2 --force
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/abstraction-rtos/release-v1.7.5 -c advice.detachedHead=false checkout release-v1.7.5 --force
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/core-make/release-v3.3.1 -c advice.detachedHead=false checkout release-v3.3.1 --force
+HEAD is now at 97cf620 Upload clib-support [1864]
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/clib-support/release-v1.4.2 -c advice.detachedHead=false checkout release-v1.4.2 --force
+Starting: git -C C:/Users/bahariridwan/.modustoolbox/global/device-db/release-v4.11.1 -c advice.detachedHead=false checkout release-v4.11.1 --force
 HEAD is now at ce02f64 Upload cmsis 5.8.0.50
-Success: git -C D:/Project/mtb_shared/cmsis/release-v5.8.0 -c advice.detachedHead=false checkout release-v5.8.0 --force
-HEAD is now at
- 96bbf19 Upload mtb-pdl-cat1 3.9.0.29592 [2049]
-Success: git -C D:/Project/mtb_shared/mtb-pdl-cat1/release-v3.9.0 -c advice.detachedHead=false checkout release-v3.9.0 --force
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/cmsis/release-v5.8.0 -c advice.detachedHead=false checkout release-v5.8.0 --force
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/mtb-hal-cat1/release-v2.5.4 -c advice.detachedHead=false checkout release-v2.5.4 --force
+HEAD is now at a74be8b Upload core-lib [1796]
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/core-lib/release-v1.4.1 -c advice.detachedHead=false checkout release-v1.4.1 --force
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/recipe-make-cat1a/release-v2.2.0 -c advice.detachedHead=false checkout release-v2.2.0 --force
+HEAD is now at 58bf444 Upload core-make 3.3.1.5153 [2252]
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/core-make/release-v3.3.1 -c advice.detachedHead=false checkout release-v3.3.1 --force
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/mtb-pdl-cat1/release-v3.9.0 -c advice.detachedHead=false checkout release-v3.9.0 --force
 HEAD is now at 4090e1a Upload mtb-hal-cat1 [1976]
-Success: git -C D:/Project/mtb_shared/mtb-hal-cat1/release-v2.5.4 -c advice.detachedHead=false checkout release-v2.5.4 --force
-Requested to change the active target to 'APP_CY8CKIT-062S2-43012'.
-Removed the file 'D:/Project/Interface_u8g2/deps/TARGET_CY8CKIT-062S2-43012.mtb'.
-Writing the file 'D:/Project/Interface_u8g2/libs/app.mk'.
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/mtb-hal-cat1/release-v2.5.4 -c advice.detachedHead=false checkout release-v2.5.4 --force
+HEAD is now at 907dc78 Upload recipe-make-cat1a 2.2.0.5066 [2215]
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/recipe-make-cat1a/release-v2.2.0 -c advice.detachedHead=false checkout release-v2.2.0 --force
+HEAD is now at 7c000f21 Upload device-db 4.11.1.5194 [2216]
+Success: git -C C:/Users/bahariridwan/.modustoolbox/global/device-db/release-v4.11.1 -c advice.detachedHead=false checkout release-v4.11.1 --force
+HEAD is now at 96bbf19 Upload mtb-pdl-cat1 3.9.0.29592 [2049]
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/mtb-pdl-cat1/release-v3.9.0 -c advice.detachedHead=false checkout release-v3.9.0 --force
+Requested to change the active target to 'APP_CYBLE-416045-EVAL'.
+Removed the file 'C:/Users/bahariridwan/Smart-Clock/Interface_u8g2_CYBLE_416045/deps/TARGET_CYBLE-416045-EVAL.mtb'.
+Writing the file 'C:/Users/bahariridwan/Smart-Clock/Interface_u8g2_CYBLE_416045/libs/app.mk'.
 Successfully committed changes to the project 'mtb-example-empty-app'.
-Project "Interface_u8g2" created successfully.
-Successfully created "Interface_u8g2" application.
+Project "Interface_u8g2_CYBLE_416045" created successfully.
+Successfully created "Interface_u8g2_CYBLE_416045" application.
 ==============================================================================
-= Export "Interface_u8g2" application to Eclipse IDE for ModusToolbox™ =
+= Export "Interface_u8g2_CYBLE_416045" application to Eclipse IDE for ModusToolbox™ =
 ==============================================================================
-make eclipse CY_IDE_PRJNAME=Interface_u8g2 CY_MAKE_IDE=eclipse CY_MAKE_IDE_VERSION=3.1 CY_TOOLS_PATHS=C:/ModusToolbox/tools_3.1 MTB_MAKE_ECLIPSE_FORCE_REGENERATE_PROJECT=1
-Tools Directory: C:/ModusToolbox/tools_3.1
+make eclipse CY_IDE_PRJNAME=Interface_u8g2_CYBLE_416045 CY_MAKE_IDE=eclipse CY_MAKE_IDE_VERSION=3.1 CY_TOOLS_PATHS=C:/Users/bahariridwan/ModusToolbox/tools_3.1 MTB_MAKE_ECLIPSE_FORCE_REGENERATE_PROJECT=1
+Tools Directory: C:/Users/bahariridwan/ModusToolbox/tools_3.1
 Removing .mtbqueryapi file...
 Searching installed tools in progress...
 Searching installed tools complete
-Initializing build: mtb-example-empty-app Debug APP_CY8CKIT-062S2-43012 GCC_ARM
+Initializing build: mtb-example-empty-app Debug APP_CYBLE-416045-EVAL GCC_ARM
 Prebuild operations complete
 Auto-discovery in progress...
 Auto-discovery complete
 Commencing build operations...
-Tools Directory: C:/ModusToolbox/tools_3.1
+Tools Directory: C:/Users/bahariridwan/ModusToolbox/tools_3.1
 Constructing build rules...
 Build rules construction complete
 ==============================================================================
@@ -205,19 +209,19 @@ Build rules construction complete
 Generating compilation database file...
 -> ./build/compile_commands.json
 Compilation database file generation complete
-Generated D:/Project/Interface_u8g2/.cproject
-Generated D:/Project/Interface_u8g2/.project
-Generated D:/Project/Interface_u8g2/.mtbLaunchConfigs/Interface_u8g2 Attach (KitProg3_MiniProg4).launch
-Generated D:/Project/Interface_u8g2/.mtbLaunchConfigs/Interface_u8g2 Debug (KitProg3_MiniProg4).launch
-Generated D:/Project/Interface_u8g2/.mtbLaunchConfigs/Interface_u8g2 Erase (KitProg3_MiniProg4).launch
-Generated D:/Project/Interface_u8g2/.mtbLaunchConfigs/Interface_u8g2 Program (KitProg3_MiniProg4).launch
+Generated C:/Users/bahariridwan/Smart-Clock/Interface_u8g2_CYBLE_416045/.cproject
+Generated C:/Users/bahariridwan/Smart-Clock/Interface_u8g2_CYBLE_416045/.project
+Generated C:/Users/bahariridwan/Smart-Clock/Interface_u8g2_CYBLE_416045/.mtbLaunchConfigs/Interface_u8g2_CYBLE_416045 Attach (KitProg3_MiniProg4).launch
+Generated C:/Users/bahariridwan/Smart-Clock/Interface_u8g2_CYBLE_416045/.mtbLaunchConfigs/Interface_u8g2_CYBLE_416045 Debug (KitProg3_MiniProg4).launch
+Generated C:/Users/bahariridwan/Smart-Clock/Interface_u8g2_CYBLE_416045/.mtbLaunchConfigs/Interface_u8g2_CYBLE_416045 Erase (KitProg3_MiniProg4).launch
+Generated C:/Users/bahariridwan/Smart-Clock/Interface_u8g2_CYBLE_416045/.mtbLaunchConfigs/Interface_u8g2_CYBLE_416045 Program (KitProg3_MiniProg4).launch
 Instructions:
 1. Open Eclipse IDE for ModusToolbox
 2. Select 'Import Existing Application In-Place' from the QuickPanel
 3. Browse to the application root directory
-The application "Interface_u8g2" was successfully exported to Eclipse IDE for ModusToolbox™.
+The application "Interface_u8g2_CYBLE_416045" was successfully exported to Eclipse IDE for ModusToolbox™.
 0 error(s), 0 warning(s)
 
 Summary:
 
-Successfully created and exported "Interface_u8g2" application.
+Successfully created and exported "Interface_u8g2_CYBLE_416045" application.
