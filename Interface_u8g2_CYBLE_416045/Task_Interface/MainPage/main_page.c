@@ -7,19 +7,27 @@
 #define MAIN_PAGE_ID 1
 #define MENU_PAGE_ID 2
 
-static uint8_t THIS_PAGE = 0;
+static enum mode_t{
+	DEFAULT_MODE,
+	BLUETOOTH_MODE
+};
+
 struct tm RTC_TIME;
 char buf_temp [20];
-uint8_t RTC_ENABLE;
 
-uint8_t x = 0, y = 0;
+static uint8_t THIS_PAGE = 0;
+static uint8_t SMART_CLOCK_MODE;
+static uint8_t x = 0, y = 0;
 
 void main_page(){
 	init_main_page();
 
 	while (1){
 		if (THIS_PAGE == MAIN_PAGE_ID){
-			main_draw();
+			if (SMART_CLOCK_MODE == DEFAULT_MODE)
+				default_mode_draw();
+			else
+				bluetooth_mode_draw();
 		}
 		else{
 			deinit_main_page();
@@ -31,7 +39,7 @@ void main_page(){
 	deinit_main_page();
 }
 
-void main_draw(){
+static void default_mode_draw(){
 
 	char buf_time[STRING_BUFFER_SIZE];
 	char buf_date[STRING_BUFFER_SIZE];
@@ -51,26 +59,37 @@ void main_draw(){
 	send_buffer_u8g2();
 }
 
-void init_main_page()
-{
-	// attach button
-	button.attachPressed(&btn_obj[0], enter_menu_cb);
-	button.attachPressed(&btn_obj[1], wake_up_cb);
-	THIS_PAGE = MAIN_PAGE_ID;
+static void bluetooth_mode_draw(){
 
+	u8g2_DrawStr(&u8g2_obj, x+110, y+8, "80%");
+	u8g2_DrawStr(&u8g2_obj, x+20, y+25, "Bluetooth Mode");
+
+	send_buffer_u8g2();
 }
 
-void deinit_main_page(){
+static void init_main_page()
+{
+	// attach button
+	button.attachPressed(&btn_obj[BUTTON_UP], moveToMenuPage);
+	button.attachPressed(&btn_obj[BUTTON_DOWN], changeMode);
+
+	THIS_PAGE = MAIN_PAGE_ID;
+	SMART_CLOCK_MODE = 0;
+}
+
+static void deinit_main_page(){
 
 	// de attach button
 	for (uint8_t i = 0; i < 2; i++)
 		button.dettachPressed(&btn_obj[i]);
 }
 
-void enter_menu_cb(){
+static void moveToMenuPage(){
 	THIS_PAGE = MENU_PAGE_ID;
 }
 
-void wake_up_cb(){
-	THIS_PAGE = MAIN_PAGE_ID;
+static void changeMode(){
+	SMART_CLOCK_MODE++;
+	if (SMART_CLOCK_MODE > BLUETOOTH_MODE)
+		SMART_CLOCK_MODE = 0;
 }

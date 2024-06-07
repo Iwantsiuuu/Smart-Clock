@@ -16,8 +16,12 @@ typedef struct{
 	float temperature,
 		  pressure;
 }sensor_data;
+
+extern xensiv_dps3xx_t pressure_sensor;
+
 extern sensor_data dps_sensor;
 extern sensor_data bmp_sensor;
+
 void sensor_App(void *arg);
 
 

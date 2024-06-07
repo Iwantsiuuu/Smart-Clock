@@ -13,10 +13,10 @@
 
 #include "button.h"
 
-#define BTN_ENTER 	(P0_2)
-#define BTN_BACK	(P0_3)
+#define BTN_ENTER 	(P10_6)
+#define BTN_BACK	(P9_6)
 #define BTN_UP		(P0_4)
-#define BTN_DOWN	(P1_4)
+#define BTN_DOWN	(P0_5)
 
 typedef enum buttonCode {
 	BUTTON_UP 		= 0,
@@ -25,7 +25,7 @@ typedef enum buttonCode {
 	BUTTON_BACK 	= 3
 }BTN_CODE;
 
-extern bool systemReady;
+//extern bool systemReady;
 
 void ButtonApp(void *arg);
 

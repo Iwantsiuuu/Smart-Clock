@@ -17,6 +17,7 @@ TaskHandle_t sensorHandle;
 SemaphoreHandle_t semphr_i2c_dev;
 
 bool systemReady = false;
+bool oledReady = false;
 
 int main(void)
 {
@@ -46,9 +47,28 @@ int main(void)
 
 // initialize peripheral
 	cy_retarget_io_init(P5_1, P5_0, CY_RETARGET_IO_BAUDRATE);
-	initialize_i2c();
 
-	result = cyhal_rtc_init(&rtc_obj);
+	result = initialize_i2c();
+
+	if(result != CY_RSLT_SUCCESS)
+		printf("fail init I2C\r\n");
+
+	printf("Initialize I2C Success\r\n");
+
+	result = xensiv_dps3xx_mtb_init_i2c(&pressure_sensor, &i2c, 0x77);
+	if(result == CY_RSLT_SUCCESS)
+		printf("Initialize DPS310 Success\r\n");
+
+//	init_u8g2();
+//	printf("Initialize Oled Success\r\n");
+
+	buttonInit();
+	printf("Initialize Button Success\r\n");
+
+
+	if(cyhal_rtc_init(&rtc_obj) == CY_RSLT_SUCCESS)
+		systemReady = true;
+	printf("Initialize RTC Success\r\n");
 
 // task initialize
 	semphr_i2c_dev = xSemaphoreCreateMutex();

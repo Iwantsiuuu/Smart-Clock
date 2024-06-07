@@ -28,5 +28,6 @@ extern TaskHandle_t sensorHandle;
 // semaphore
 extern SemaphoreHandle_t semphr_i2c_dev;
 extern bool systemReady;
+extern bool oledReady;
 
 #endif /* MAIN_H_ */

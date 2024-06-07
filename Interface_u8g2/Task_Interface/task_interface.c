@@ -15,12 +15,12 @@ void displayOled(){
 	while (!systemReady){
 		vTaskDelay(5);
 	}
-	mtb_ssd1306_init_i2c(&i2c);
-	init_u8g2();
 
-	RTC_ENABLE = cyhal_rtc_is_enabled(&rtc_obj);
-	if(RTC_ENABLE != ENABLE)
-		rtc_set_first();
+	//	init_u8g2();
+
+	//	RTC_ENABLE = cyhal_rtc_is_enabled(&rtc_obj);
+	//	if(RTC_ENABLE != ENABLE)
+	//		rtc_set_first();
 
 	while(1){
 
@@ -29,7 +29,10 @@ void displayOled(){
 	}
 }
 
-static void init_u8g2(){
+void init_u8g2(){
+
+	mtb_ssd1306_init_i2c(&i2c);
+
 	/* Initialize the U8 Display */
 	u8g2_Setup_ssd1306_i2c_128x64_noname_f(&u8g2_obj, U8G2_R0, u8x8_byte_hw_i2c,
 			u8x8_gpio_and_delay_cb);

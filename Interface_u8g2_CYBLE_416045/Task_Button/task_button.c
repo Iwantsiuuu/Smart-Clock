@@ -9,7 +9,6 @@ cyhal_gpio_t btn_pin[NUM_OF_BTN] = {
 		BTN_BACK
 };
 
-
 void ButtonApp(void *arg){
 
 	button.setTick(xTaskGetTickCount);

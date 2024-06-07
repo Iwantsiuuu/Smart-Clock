@@ -24,6 +24,8 @@
 extern TaskHandle_t buttonHandle;
 extern TaskHandle_t displayHandle;
 extern TaskHandle_t sensorHandle;
+extern TaskHandle_t voiceCommandHandle;
+
 
 // semaphore
 extern SemaphoreHandle_t semphr_i2c_dev;

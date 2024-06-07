@@ -1,6 +1,6 @@
 #include "main.h"
 #include "interface.h"
-
+#include "voice_command.h"
 #include "rtc_sc.h"
 #include "task_button.h"
 #include "task_interface.h"
@@ -12,6 +12,7 @@
 TaskHandle_t buttonHandle;
 TaskHandle_t displayHandle;
 TaskHandle_t sensorHandle;
+TaskHandle_t voiceCommandHandle;
 
 // semaphore
 SemaphoreHandle_t semphr_i2c_dev;
@@ -44,6 +45,8 @@ int main(void)
 	/* Enable global interrupts */
 	__enable_irq();
 
+    clock_init();
+
 // initialize peripheral
 	cy_retarget_io_init(P5_1, P5_0, CY_RETARGET_IO_BAUDRATE);
 	initialize_i2c();
@@ -58,6 +61,7 @@ int main(void)
 	xTaskCreate(ButtonApp, "ButtonApp", 1024*2, NULL, taskPriority, &buttonHandle);
 	xTaskCreate(displayOled, "DisplayApp", 1024*2, NULL, (taskPriority-1), &displayHandle);
 	xTaskCreate(sensor_App, "Sensor", 1024*2, NULL, (taskPriority-2), &sensorHandle);
+	xTaskCreate(voice_command_play, "voice", 1024*2, NULL, taskPriority-3, &voiceCommandHandle);
 
 	vTaskStartScheduler();
 

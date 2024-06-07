@@ -3,6 +3,7 @@
 
 #include "cyhal.h"
 #include "cybsp.h"
+#include "main.h"
 #include "cy_retarget_io.h"
 
 /*Include FreeRTOS*/
@@ -28,7 +29,7 @@ typedef enum buttonCode {
 extern bool systemReady;
 
 void ButtonApp(void *arg);
-
+void buttonInit(void);
 extern button_var btn_obj[NUM_OF_BTN];
 
 #endif

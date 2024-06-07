@@ -6,6 +6,6 @@
 
 extern cyhal_i2c_t i2c;
 
-void initialize_i2c();
+uint32_t initialize_i2c();
 
 #endif

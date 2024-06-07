@@ -15,7 +15,7 @@ void displayOled(void *arg){
 			.frequencyhal_hz = 400000
 	};
 
-	cyhal_i2c_init(&i2c, P6_1, P6_0, NULL);
+	cyhal_i2c_init(&i2c, P10_1, P10_0, NULL);
 	cyhal_i2c_configure(&i2c, &i2c_cfg);
 
 	mtb_ssd1306_init_i2c(&i2c);

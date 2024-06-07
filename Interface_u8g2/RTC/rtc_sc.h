@@ -1,4 +1,4 @@
-#pragma once
+//#pragma once
 #ifndef RTC_SC_H_
 #define RTC_SC_H_
 

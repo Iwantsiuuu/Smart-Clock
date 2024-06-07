@@ -154,31 +154,31 @@ static void decrement_var_cb(){
 	switch (current_var){
 	case Hour :
 		RTC_Setup.hour--;
-		if (RTC_Setup.hour < DEAFULT_VARIABLE_VALUE)
+		if (RTC_Setup.hour > NUM_HOUR)
 			RTC_Setup.hour = NUM_HOUR;
 		break;
 
 	case Minute :
 		RTC_Setup.min--;
-		if (RTC_Setup.min < DEAFULT_VARIABLE_VALUE)
+		if (RTC_Setup.min > NUM_MINUTE)
 			RTC_Setup.min = NUM_MINUTE;
 		break;
 
 	case Secon :
 		RTC_Setup.sec--;
-		if (RTC_Setup.sec < DEAFULT_VARIABLE_VALUE)
+		if (RTC_Setup.sec > NUM_SECON)
 			RTC_Setup.sec = NUM_SECON;
 		break;
 
 	case Day :
 		RTC_Setup.mday--;
-		if (RTC_Setup.mday < DEAFULT_VARIABLE_VALUE)
+		if (RTC_Setup.mday > NUM_DAY)
 			RTC_Setup.mday = NUM_DAY;
 		break;
 
 	case Month :
 		RTC_Setup.month--;
-		if (RTC_Setup.month < DEAFULT_VARIABLE_VALUE)
+		if (RTC_Setup.month > NUM_MONTH)
 			RTC_Setup.month = NUM_MONTH;
 		break;
 
