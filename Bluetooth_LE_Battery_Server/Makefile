@@ -40,7 +40,7 @@ MTB_TYPE=COMBINED
 # To change the target, it is recommended to use the Library manager
 # ('make library-manager' from command line), which will also update Eclipse IDE launch
 # configurations.
-TARGET=APP_CY8CKIT-062S2-43012
+TARGET=APP_CY8CPROTO-063-BLE
 
 
 
@@ -86,7 +86,7 @@ VERBOSE=
 # ... then code in directories named COMPONENT_foo and COMPONENT_bar will be
 # added to the build
 #
-COMPONENTS= FREERTOS PSOC6HAL WICED_BLE OTA_BLUETOOTH
+COMPONENTS= FREERTOS PSOC6HAL WICED_BLE OTA_BLUETOOTH RTOS_AWARE
 
 # Like COMPONENTS, but disable optional code that was enabled by default.
 DISABLE_COMPONENTS=
@@ -167,6 +167,7 @@ ifeq ($(OTA_SUPPORT),1)
 
     #Select the core for the current application
     CORE?=CM4
+    CORE_NAME=CM4_0
 
     #Ignore Non-OTA code
     CY_IGNORE+=./non_ota_source
@@ -194,6 +195,10 @@ ifeq ($(OTA_SUPPORT),1)
         DISABLE_COMPONENTS+=CM0P_BLESS
         OTA_FLASH_MAP?=$(SEARCH_ota-update)/configs/flashmap/psoc62_1m_cm0_int_swap_single.json
     else ifeq ($(TARGET), $(filter $(TARGET), APP_CY8CPROTO-063-BLE APP_CYBLE-416045-EVAL))
+    	#DEFINES+=CY_USING_PREBUILT_CM0P_IMAGE
+    	#USE_XIP=0
+    	#PSOC6_BLE=1
+    	#DEFINES+=CY_USING_PREBUILT_CM0P_IMAGE	CORE_NAME_CM4_0	PSOC6_BLE
         OTA_PLATFORM=PSOC_063_1M
         COMPONENTS+=CM0P_BLESS_OTA
         DISABLE_COMPONENTS+=CM0P_BLESS
@@ -210,7 +215,7 @@ ifeq ($(OTA_SUPPORT),1)
     #
     OTA_APP_VERSION_MAJOR?=5
     OTA_APP_VERSION_MINOR?=0
-    OTA_APP_VERSION_BUILD?=0
+    OTA_APP_VERSION_BUILD?=1
 
 	# Build location local to this root directory.
 	CY_BUILD_LOC:=./build

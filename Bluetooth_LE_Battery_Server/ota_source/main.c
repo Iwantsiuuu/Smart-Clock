@@ -289,6 +289,10 @@ int main()
     cy_retarget_io_init(CYBSP_DEBUG_UART_TX, CYBSP_DEBUG_UART_RX,
                         CY_RETARGET_IO_BAUDRATE);
 
+	cy_result = cyhal_gpio_init(P7_1, CYHAL_GPIO_DIR_OUTPUT, CYHAL_GPIO_DRIVE_OPENDRAINDRIVESHIGH, CYBSP_LED_STATE_ON);
+	if(cy_result == CY_RSLT_SUCCESS)
+		cyhal_gpio_write(P7_1, 1u);
+
     /* default for all logging to WARNING */
     cy_log_init(CY_LOG_INFO, NULL, NULL);
 
@@ -344,6 +348,8 @@ int main()
         cy_log_msg(CYLF_DEF, CY_LOG_ERR, "Bluetooth Stack Initialization failed!! \r\n");
         CY_ASSERT(0);
     }
+
+    cy_log_msg(CYLF_DEF, CY_LOG_INFO,"OTA Firmware Upgrade test\r\n");
 
     /*Create battery service task*/
     rtos_result = xTaskCreate(bas_task, "BAS Task", (configMINIMAL_STACK_SIZE * 4),
