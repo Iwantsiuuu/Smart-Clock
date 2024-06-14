@@ -1,7 +1,7 @@
 Loading the ModusToolbox Technology Packs and Early Access Packs
-Finished loading the ModusToolbox Technology Packs and Early Access Packs (6 ms)
+Finished loading the ModusToolbox Technology Packs and Early Access Packs (15 ms)
 Loading the tools information
-Finished loading the tools information (64 ms)
+Finished loading the tools information (126 ms)
 Loading the manifest data
 Loading super manfiest files from all sources
 Getting manifests from remote and/or local sources
@@ -87,15 +87,15 @@ Finished download of file 'https://github.com/CyberonEBU/cyberon-mtb-mw-manifest
 Finished download of file 'https://github.com/golioth/mtb-golioth-mw-manifest/raw/main/mtb-golioth-mw-manifest-fv2.xml'
 Finished download of file 'https://github.com/memfault/mtb-memfault-mw-manifest/raw/main/mtb-memfault-mw-manifest-fv2.xml'
 Finished download of file 'https://github.com/sensiml/sensiml-mw-manifest/raw/main/sensiml-mw-manifest-fv2.xml'
-Finished loading the manifest data (3531 ms)
+Finished loading the manifest data (5359 ms)
 Loading the device db
-Finished loading the device db (4666 ms)
+Finished loading the device db (13157 ms)
 0 error(s), 0 warning(s)
 
 Summary: 
 
-BSP: CY8CPROTO-063-BLE
-Template Application(s): Try_OLED_U8g2
+BSP: CY8CKIT-062S2-43012
+Template Application(s): Cyberon Voice Trigger And Command Demo on CM4
 Application(s) Root Path: C:/Users/bahariridwan/Smart-Clock
 
 Press "Create" to create the selected application(s).
@@ -103,119 +103,98 @@ Press "Create" to create the selected application(s).
 Collecting application data...
 
 Info: The following entered on the command line will create the exact same project as that created with the GUI tool:
-C:/Users/bahariridwan/ModusToolbox/tools_3.1/project-creator/project-creator-cli.exe --board-id CY8CPROTO-063-BLE --board-uri https://github.com/cypresssemiconductorco/TARGET_CY8CPROTO-063-BLE --board-commit latest-v4.X --app-path C:/Users/bahariridwan/mtw/Try_OLED_U8g2 --target-dir C:/Users/bahariridwan/Smart-Clock --user-app-name SmartClock --use-modus-shell
+C:/Users/bahariridwan/ModusToolbox/tools_3.1/project-creator/project-creator-cli.exe --board-id CY8CKIT-062S2-43012 --board-uri https://github.com/cypresssemiconductorco/TARGET_CY8CKIT-062S2-43012 --board-commit latest-v4.X --app-id cyberon-voice-trigger-and-command-demo-psoc6-cm4 --app-uri https://github.com/CyberonEBU/cyberon-voice-trigger-and-command-demo-psoc6-cm4 --app-commit release-v2.0 --target-dir C:/Users/bahariridwan/Smart-Clock --user-app-name Voice_Trigger_And_Command --use-modus-shell
 
-Starting application creation for 'C:/Users/bahariridwan/Smart-Clock/SmartClock'.
-Acquiring the application source 'C:/Users/bahariridwan/mtw/Try_OLED_U8g2'.
-Copying C:/Users/bahariridwan/mtw/Try_OLED_U8g2 to C:/Users/bahariridwan/Smart-Clock/SmartClock.
-Copied C:/Users/bahariridwan/mtw/Try_OLED_U8g2 to C:/Users/bahariridwan/Smart-Clock/SmartClock.
+Starting application creation for 'C:/Users/bahariridwan/Smart-Clock/Voice_Trigger_And_Command'.
+Acquiring the application source 'https://github.com/CyberonEBU/cyberon-voice-trigger-and-command-demo-psoc6-cm4'.
 Acquired application source successfully.
 Loading the application.
 Loaded the application successfully.
-Processing project 'SmartClock'.
-Starting to commit changes to the filesystem and project 'mtb-example-empty-app'.
-Writing mtb file for asset 'CY8CPROTO-063-BLE' to the folder 'C:/Users/bahariridwan/Smart-Clock/SmartClock/deps'.
-Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/abstraction-rtos/release-v1.7.6 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/btstack-integration/release-v4.7.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/btstack/release-v3.9.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Processing project 'Voice_Trigger_And_Command'.
+Starting to commit changes to the filesystem and project 'cyberon-voice-trigger-and-command-demo-psoc6-cm4'.
+Writing mtb file for asset 'cat1cm0p' to the folder 'C:/Users/bahariridwan/Smart-Clock/Voice_Trigger_And_Command/libs'.
+Writing mtb file for asset 'core-lib' to the folder 'C:/Users/bahariridwan/Smart-Clock/Voice_Trigger_And_Command/libs'.
+Writing mtb file for asset 'core-make' to the folder 'C:/Users/bahariridwan/Smart-Clock/Voice_Trigger_And_Command/libs'.
+Writing mtb file for asset 'mtb-hal-cat1' to the folder 'C:/Users/bahariridwan/Smart-Clock/Voice_Trigger_And_Command/libs'.
+Writing mtb file for asset 'mtb-pdl-cat1' to the folder 'C:/Users/bahariridwan/Smart-Clock/Voice_Trigger_And_Command/libs'.
+Writing mtb file for asset 'recipe-make-cat1a' to the folder 'C:/Users/bahariridwan/Smart-Clock/Voice_Trigger_And_Command/libs'.
+Writing mtb file for asset 'cmsis' to the folder 'C:/Users/bahariridwan/Smart-Clock/Voice_Trigger_And_Command/libs'.
+Writing mtb file for asset 'device-db' to the folder 'C:/Users/bahariridwan/Smart-Clock/Voice_Trigger_And_Command/libs'.
+Writing mtb file for asset 'CY8CKIT-062S2-43012' to the folder 'C:/Users/bahariridwan/Smart-Clock/Voice_Trigger_And_Command/deps'.
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/Voice_Trigger_And_Command/libs clone --origin cypress --no-checkout https://github.com/CyberonEBU/cyberon-dspotter-lib-psoc6-cm4 cyberon-dspotter-lib-psoc6-cm4
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/retarget-io clone --origin cypress --no-checkout https://github.com/cypresssemiconductorco/retarget-io release-v1.3.0
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/Voice_Trigger_And_Command/libs clone --origin cypress --no-checkout https://github.com/cypresssemiconductorco/TARGET_CY8CKIT-062S2-43012 TARGET_CY8CKIT-062S2-43012
 Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/cat1cm0p/release-v1.5.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/abstraction-rtos/release-v1.7.6 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/core-make/release-v3.3.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/btstack-integration/release-v4.7.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/display-oled-ssd1306/release-v1.0.2 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Cloning into 'cyberon-dspotter-lib-psoc6-cm4'...
+Success: git -C C:/Users/bahariridwan/Smart-Clock/Voice_Trigger_And_Command/libs clone --origin cypress --no-checkout https://github.com/CyberonEBU/cyberon-dspotter-lib-psoc6-cm4 cyberon-dspotter-lib-psoc6-cm4
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/core-lib/release-v1.4.2 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Cloning into 'release-v1.3.0'...
+Cloning into 'TARGET_CY8CKIT-062S2-43012'...
 Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/cat1cm0p/release-v1.5.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/freertos/release-v10.5.002 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/btstack/release-v3.9.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/core-make/release-v3.3.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/retarget-io clone --origin cypress --no-checkout https://github.com/cypresssemiconductorco/retarget-io release-v1.3.0
 Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/mtb-hal-cat1/release-v2.6.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/freertos/release-v10.5.002 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/mtb-pdl-cat1/release-v3.10.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/core-make/release-v3.3.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bahariridwan/Smart-Clock/Voice_Trigger_And_Command/libs clone --origin cypress --no-checkout https://github.com/cypresssemiconductorco/TARGET_CY8CKIT-062S2-43012 TARGET_CY8CKIT-062S2-43012
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/mtb-pdl-cat1/release-v3.10.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/core-lib/release-v1.4.2 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
 Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/recipe-make-cat1a/release-v2.2.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/display-oled-ssd1306/release-v1.0.2 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/retarget-io/release-v1.5.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/mtb-hal-cat1/release-v2.6.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/sensor-xensiv-dps3xx/release-v1.0.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/sensor-xensiv-dps3xx/release-v1.0.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C C:/Users/bahariridwan/Smart-Clock/SmartClock/libs clone --origin cypress --no-checkout https://github.com/cypresssemiconductorco/TARGET_CY8CPROTO-063-BLE TARGET_CY8CPROTO-063-BLE
-Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/recipe-make-cat1a/release-v2.2.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/clib-support/release-v1.4.2 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/retarget-io/release-v1.5.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/core-make/release-v3.3.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
 Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/cmsis/release-v5.8.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Cloning into 'TARGET_CY8CPROTO-063-BLE'...
-Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/mtb-pdl-cat1/release-v3.10.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/core-lib/release-v1.4.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/cmsis/release-v5.8.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/mtb-hal-cat1/release-v2.6.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
 Starting: git -C C:/Users/bahariridwan/.modustoolbox/global/device-db/release-v4.15.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/clib-support/release-v1.4.2 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/abstraction-rtos/release-v1.7.6 -c advice.detachedHead=false checkout release-v1.7.6 --force
-Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/core-lib/release-v1.4.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
-Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/btstack-integration/release-v4.7.0 -c advice.detachedHead=false checkout release-v4.7.0 --force
-Success: git -C C:/Users/bahariridwan/Smart-Clock/SmartClock/libs clone --origin cypress --no-checkout https://github.com/cypresssemiconductorco/TARGET_CY8CPROTO-063-BLE TARGET_CY8CPROTO-063-BLE
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/mtb-pdl-cat1/release-v3.10.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/Voice_Trigger_And_Command/libs/cyberon-dspotter-lib-psoc6-cm4 -c advice.detachedHead=false checkout release-v2.0 --force
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/recipe-make-cat1a/release-v2.2.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
 Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/cat1cm0p/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
-HEAD is now at 345e1b1 Upload abstraction-rtos [2307]
-Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/abstraction-rtos/release-v1.7.6 -c advice.detachedHead=false checkout release-v1.7.6 --force
-Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/btstack/release-v3.9.0 -c advice.detachedHead=false checkout release-v3.9.0 --force
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/cmsis/release-v5.8.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/retarget-io/release-v1.3.0 -c advice.detachedHead=false checkout release-v1.3.0 --force
+HEAD is now at b6e9002 Update header file and lib
+Success: git -C C:/Users/bahariridwan/Smart-Clock/Voice_Trigger_And_Command/libs/cyberon-dspotter-lib-psoc6-cm4 -c advice.detachedHead=false checkout release-v2.0 --force
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/Voice_Trigger_And_Command/libs/TARGET_CY8CKIT-062S2-43012 -c advice.detachedHead=false checkout release-v4.2.0 --force
+Success: git -C C:/Users/bahariridwan/.modustoolbox/global/device-db/release-v4.15.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/core-lib/release-v1.4.2 -c advice.detachedHead=false checkout release-v1.4.2 --force
 HEAD is now at 08904a2 Upload cat1cm0p 1.5.0.403 [2307]
 Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/cat1cm0p/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
-Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/freertos/release-v10.5.002 -c advice.detachedHead=false checkout release-v10.5.002 --force
-Success: git -C C:/Users/bahariridwan/.modustoolbox/global/device-db/release-v4.15.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
 Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/core-make/release-v3.3.1 -c advice.detachedHead=false checkout release-v3.3.1 --force
-HEAD is now at 8a42917 Upload btstack-integration 4.7.0.2585 [2307]
-Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/btstack-integration/release-v4.7.0 -c advice.detachedHead=false checkout release-v4.7.0 --force
-Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/display-oled-ssd1306/release-v1.0.2 -c advice.detachedHead=false checkout release-v1.0.2 --force
-HEAD is now at e175e03 Upload freertos 10.5.002.657 [2307]
-Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/freertos/release-v10.5.002 -c advice.detachedHead=false checkout release-v10.5.002 --force
+HEAD is now at a61cd7c Upload retarget-io 1.3.0.25183
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/retarget-io/release-v1.3.0 -c advice.detachedHead=false checkout release-v1.3.0 --force
 Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/mtb-hal-cat1/release-v2.6.0 -c advice.detachedHead=false checkout release-v2.6.0 --force
+HEAD is now at a085cc6 Upload TARGET_CY8CKIT-062S2-43012 [1515]
+Success: git -C C:/Users/bahariridwan/Smart-Clock/Voice_Trigger_And_Command/libs/TARGET_CY8CKIT-062S2-43012 -c advice.detachedHead=false checkout release-v4.2.0 --force
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/mtb-pdl-cat1/release-v3.10.1 -c advice.detachedHead=false checkout release-v3.10.1 --force
+HEAD is now at e28913a Upload core-lib [2455]
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/core-lib/release-v1.4.2 -c advice.detachedHead=false checkout release-v1.4.2 --force
+Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/recipe-make-cat1a/release-v2.2.1 -c advice.detachedHead=false checkout release-v2.2.1 --force
 HEAD is now at 58bf444 Upload core-make 3.3.1.5153 [2252]
 Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/core-make/release-v3.3.1 -c advice.detachedHead=false checkout release-v3.3.1 --force
-Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/sensor-xensiv-dps3xx/release-v1.0.0 -c advice.detachedHead=false checkout release-v1.0.0 --force
-HEAD is now at d604a6f Upload display-oled-ssd1306 [347]
-Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/display-oled-ssd1306/release-v1.0.2 -c advice.detachedHead=false checkout release-v1.0.2 --force
-Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/recipe-make-cat1a/release-v2.2.1 -c advice.detachedHead=false checkout release-v2.2.1 --force
-HEAD is now at bdf5a3c Upload sensor-xensiv-dps3xx 1.0.0.23328
-Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/sensor-xensiv-dps3xx/release-v1.0.0 -c advice.detachedHead=false checkout release-v1.0.0 --force
-Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/retarget-io/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
-HEAD is now at 91e3dd7 Upload btstack 3.9.0.19326 [2307]
-HEAD is now at 3f18eed Upload recipe-make-cat1a 2.2.1.5190 [2313]
-Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/btstack/release-v3.9.0 -c advice.detachedHead=false checkout release-v3.9.0 --force
-Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/mtb-pdl-cat1/release-v3.10.0 -c advice.detachedHead=false checkout release-v3.10.0 --force
-Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/recipe-make-cat1a/release-v2.2.1 -c advice.detachedHead=false checkout release-v2.2.1 --force
 Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/cmsis/release-v5.8.0 -c advice.detachedHead=false checkout release-v5.8.0 --force
-HEAD is now at 2ede4ff Upload mtb-hal-cat1 [2307]
-Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/mtb-hal-cat1/release-v2.6.0 -c advice.detachedHead=false checkout release-v2.6.0 --force
-Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/clib-support/release-v1.4.2 -c advice.detachedHead=false checkout release-v1.4.2 --force
-HEAD is now at db7f962 Upload retarget-io [1515]
-Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/retarget-io/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
-Starting: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/core-lib/release-v1.4.1 -c advice.detachedHead=false checkout release-v1.4.1 --force
-HEAD is now at 97cf620 Upload clib-support [1864]
-Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/clib-support/release-v1.4.2 -c advice.detachedHead=false checkout release-v1.4.2 --force
-Starting: git -C C:/Users/bahariridwan/Smart-Clock/SmartClock/libs/TARGET_CY8CPROTO-063-BLE -c advice.detachedHead=false checkout release-v4.2.0 --force
+HEAD is now at 3f18eed Upload recipe-make-cat1a 2.2.1.5190 [2313]
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/recipe-make-cat1a/release-v2.2.1 -c advice.detachedHead=false checkout release-v2.2.1 --force
+Starting: git -C C:/Users/bahariridwan/.modustoolbox/global/device-db/release-v4.15.0 -c advice.detachedHead=false checkout release-v4.15.0 --force
 HEAD is now at ce02f64 Upload cmsis 5.8.0.50
 Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/cmsis/release-v5.8.0 -c advice.detachedHead=false checkout release-v5.8.0 --force
-Starting: git -C C:/Users/bahariridwan/.modustoolbox/global/device-db/release-v4.15.0 -c advice.detachedHead=false checkout release-v4.15.0 --force
-HEAD is now at a74be8b Upload core-lib [1796]
-Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/core-lib/release-v1.4.1 -c advice.detachedHead=false checkout release-v1.4.1 --force
-HEAD is now at dc2df2d Upload mtb-pdl-cat1 3.10.0.32115 [2307]
-Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/mtb-pdl-cat1/release-v3.10.0 -c advice.detachedHead=false checkout release-v3.10.0 --force
-HEAD is now at e70e872 Upload TARGET_CY8CPROTO-063-BLE [1515]
-Success: git -C C:/Users/bahariridwan/Smart-Clock/SmartClock/libs/TARGET_CY8CPROTO-063-BLE -c advice.detachedHead=false checkout release-v4.2.0 --force
-HEAD is now at b9f369b8 Upload device-db 4.15.0.5746 [2346]
+HEAD is now at 2ede4ff Upload mtb-hal-cat1 [2307]
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/mtb-hal-cat1/release-v2.6.0 -c advice.detachedHead=false checkout release-v2.6.0 --force
+HEAD is now at b9f369b8 
+Upload device-db 4.15.0.5746 [2346]
 Success: git -C C:/Users/bahariridwan/.modustoolbox/global/device-db/release-v4.15.0 -c advice.detachedHead=false checkout release-v4.15.0 --force
-Requested to change the active target to 'APP_CY8CPROTO-063-BLE'.
-Removed the file 'C:/Users/bahariridwan/Smart-Clock/SmartClock/deps/TARGET_CY8CPROTO-063-BLE.mtb'.
-Writing the file 'C:/Users/bahariridwan/Smart-Clock/SmartClock/libs/app.mk'.
-Successfully committed changes to the project 'mtb-example-empty-app'.
-Project "SmartClock" created successfully.
-Successfully created "SmartClock" application.
+HEAD is now at 0212f1e Upload mtb-pdl-cat1 3.10.1.33273 [2403]
+Success: git -C C:/Users/bahariridwan/Smart-Clock/mtb_shared/mtb-pdl-cat1/release-v3.10.1 -c advice.detachedHead=false checkout release-v3.10.1 --force
+Requested to change the active target to 'APP_CY8CKIT-062S2-43012'.
+Removed the file 'C:/Users/bahariridwan/Smart-Clock/Voice_Trigger_And_Command/deps/TARGET_CY8CKIT-062S2-43012.mtb'.
+Writing the file 'C:/Users/bahariridwan/Smart-Clock/Voice_Trigger_And_Command/libs/app.mk'.
+Successfully committed changes to the project 'cyberon-voice-trigger-and-command-demo-psoc6-cm4'.
+Project "Voice_Trigger_And_Command" created successfully.
+Successfully created "Voice_Trigger_And_Command" application.
 ==============================================================================
-= Export "SmartClock" application to Eclipse IDE for ModusToolbox™ =
+= Export "Voice_Trigger_And_Command" application to Eclipse IDE for ModusToolbox™ =
 ==============================================================================
-make eclipse CY_IDE_PRJNAME=SmartClock CY_MAKE_IDE=eclipse CY_MAKE_IDE_VERSION=3.1 CY_TOOLS_PATHS=C:/Users/bahariridwan/ModusToolbox/tools_3.1 MTB_MAKE_ECLIPSE_FORCE_REGENERATE_PROJECT=1
+make eclipse CY_IDE_PRJNAME=Voice_Trigger_And_Command CY_MAKE_IDE=eclipse CY_MAKE_IDE_VERSION=3.1 CY_TOOLS_PATHS=C:/Users/bahariridwan/ModusToolbox/tools_3.1 MTB_MAKE_ECLIPSE_FORCE_REGENERATE_PROJECT=1
 Tools Directory: C:/Users/bahariridwan/ModusToolbox/tools_3.1
 Removing .mtbqueryapi file...
 Searching installed tools in progress...
 Searching installed tools complete
-Initializing build: mtb-example-empty-app Debug APP_CY8CPROTO-063-BLE GCC_ARM
+Initializing build: cyberon-voice-trigger-and-command-demo-psoc6-cm4 Debug APP_CY8CKIT-062S2-43012 GCC_ARM
 Prebuild operations complete
 Auto-discovery in progress...
 Auto-discovery complete
@@ -229,19 +208,19 @@ Build rules construction complete
 Generating compilation database file...
 -> ./build/compile_commands.json
 Compilation database file generation complete
-Generated C:/Users/bahariridwan/Smart-Clock/SmartClock/.cproject
-Generated C:/Users/bahariridwan/Smart-Clock/SmartClock/.project
-Generated C:/Users/bahariridwan/Smart-Clock/SmartClock/.mtbLaunchConfigs/SmartClock Attach (KitProg3_MiniProg4).launch
-Generated C:/Users/bahariridwan/Smart-Clock/SmartClock/.mtbLaunchConfigs/SmartClock Debug (KitProg3_MiniProg4).launch
-Generated C:/Users/bahariridwan/Smart-Clock/SmartClock/.mtbLaunchConfigs/SmartClock Erase (KitProg3_MiniProg4).launch
-Generated C:/Users/bahariridwan/Smart-Clock/SmartClock/.mtbLaunchConfigs/SmartClock Program (KitProg3_MiniProg4).launch
+Generated C:/Users/bahariridwan/Smart-Clock/Voice_Trigger_And_Command/.cproject
+Generated C:/Users/bahariridwan/Smart-Clock/Voice_Trigger_And_Command/.project
+Generated C:/Users/bahariridwan/Smart-Clock/Voice_Trigger_And_Command/.mtbLaunchConfigs/Voice_Trigger_And_Command Attach (KitProg3_MiniProg4).launch
+Generated C:/Users/bahariridwan/Smart-Clock/Voice_Trigger_And_Command/.mtbLaunchConfigs/Voice_Trigger_And_Command Debug (KitProg3_MiniProg4).launch
+Generated C:/Users/bahariridwan/Smart-Clock/Voice_Trigger_And_Command/.mtbLaunchConfigs/Voice_Trigger_And_Command Erase (KitProg3_MiniProg4).launch
+Generated C:/Users/bahariridwan/Smart-Clock/Voice_Trigger_And_Command/.mtbLaunchConfigs/Voice_Trigger_And_Command Program (KitProg3_MiniProg4).launch
 Instructions:
 1. Open Eclipse IDE for ModusToolbox
 2. Select 'Import Existing Application In-Place' from the QuickPanel
 3. Browse to the application root directory
-The application "SmartClock" was successfully exported to Eclipse IDE for ModusToolbox™.
+The application "Voice_Trigger_And_Command" was successfully exported to Eclipse IDE for ModusToolbox™.
 0 error(s), 0 warning(s)
 
 Summary:
 
-Successfully created and exported "SmartClock" application.
+Successfully created and exported "Voice_Trigger_And_Command" application.
