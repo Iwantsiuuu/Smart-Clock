@@ -7,6 +7,7 @@
  * 	    E-Mail : ridwanbahari236@gmail.com
  *
  */
+
 #include "rtc_sc.h"
 #include "main_ble.h"
 #include "main_page.h"
@@ -124,17 +125,14 @@ static void speech_cmd_main_page(uint8_t* cmd)
 {
 	switch(*cmd){
 	case DEFAULT_MODE_CMD:
-		printf("Default Mode\r\n");
 		MODE_DISPLAY = DEFAULT_MODE;
 		break;
 
 	case BLUETOOTH_MODE_CMD:
-		printf("Bluetooth Mode\r\n");
 		MODE_DISPLAY = BLUETOOTH_MODE;
 		break;
 
 	case SHOW_MENU_CMD:
-		printf("Go to menu\r\n");
 		THIS_PAGE = MENU_PAGE_ID;
 	}
 }

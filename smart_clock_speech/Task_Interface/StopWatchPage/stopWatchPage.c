@@ -1,4 +1,5 @@
 #include "stopWatchPage.h"
+#include "voice_command.h"
 #include "menuDisp.h"
 
 #define SW_PAGE 1
@@ -7,7 +8,7 @@ static bool countSW = false;
 static char buf_stopWatch[100];
 
 static uint8_t THIS_PAGE = 0;
-static uint8_t idx_back = SW_PAGE+1;
+static uint8_t INDEX_BACK = SW_PAGE+1;
 static uint16_t hour = 0, minute = 0, second = 0, mili_second = 0, over;
 static uint32_t firstT, time_now, dtStopWatch;
 
@@ -61,6 +62,9 @@ void stopWatch_disp(){
 	init_stopWatch_disp();
 
 	while (1){
+
+		speech_stopwatch_cmd(&speech_command);
+
 		if (THIS_PAGE == SW_PAGE)
 			stopWatch_draw();
 		else {
@@ -87,5 +91,27 @@ static void resetSW_Cb(){
 }
 
 static void BackSW_Cb(){
-	THIS_PAGE = idx_back; //index_back
+	THIS_PAGE = INDEX_BACK; //Back to menu display
+}
+
+static void speech_stopwatch_cmd(uint8_t* cmd){
+	switch(*cmd){
+	case START_CMD:
+		firstT = xTaskGetTickCount() - dtStopWatch;
+		countSW = true;
+		break;
+
+	case STOP_CMD:
+		countSW = false;
+		break;
+
+	case RESET_CMD:
+		countSW = false;
+		dtStopWatch = 0;
+		break;
+
+	case BACK_CMD:
+		THIS_PAGE = INDEX_BACK; //Back to menu display
+		break;
+	}
 }

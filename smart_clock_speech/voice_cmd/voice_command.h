@@ -34,6 +34,9 @@
 #define	STOPWATCH_CMD				(27)
 #define	ALARM_SETTING_CMD			(28)
 #define	BACK_CMD					(29)
+#define START_CMD					(30)
+#define STOP_CMD					(31)
+#define RESET_CMD					(32)
 
 void pdm_pcm_isr_handler(void *arg, cyhal_pdm_pcm_event_t event);
 void clock_init(void);

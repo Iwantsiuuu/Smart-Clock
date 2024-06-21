@@ -8,13 +8,15 @@
 static char dps_buf_pressure[20],dps_buf_temperatur[20];
 
 static uint8_t THIS_PAGE = 0;
-static uint8_t idx_back = ENVI_PAGE+1;
+static uint8_t INDEX_BACK = ENVI_PAGE+1;
 
 void airQuality_disp(){
 
 	init_airQuality_disp();
 
 	while (1){
+
+		speech_airQuality_cmd(&speech_command);
 		if (THIS_PAGE == ENVI_PAGE)
 			airQuality_draw();
 
@@ -61,5 +63,14 @@ static void airQuality_draw(){
 
 static void prev_Cb(){
 
-	THIS_PAGE = idx_back; //index_back
+	THIS_PAGE = INDEX_BACK; //index_back
+}
+
+static void speech_airQuality_cmd(uint8_t* cmd){
+	switch(*cmd)
+	{
+	case BACK_CMD:
+		THIS_PAGE = INDEX_BACK; //index_back
+		break;
+	}
 }

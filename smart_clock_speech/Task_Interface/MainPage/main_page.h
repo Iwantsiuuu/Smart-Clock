@@ -1,8 +1,7 @@
 #ifndef MAIN_PAGE_H_
 #define MAIN_PAGE_H_
 
-#include "task_button.h"
-#include "interface.h"
+//#include "interface.h"
 
 void main_page();
 static void init_main_page();

@@ -22,5 +22,6 @@ void environment_getVal();
 
 static void select_Cb();
 static void prev_Cb();
+static void speech_environment_cmd(uint8_t* cmd);
 
 #endif

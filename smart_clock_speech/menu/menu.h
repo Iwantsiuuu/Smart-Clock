@@ -1,7 +1,7 @@
 #ifndef MENU_H_
 #define MENU_H_
 
-#include "interface.h"
+#include "task_interface.h"
 
 #ifndef INTERFACE_MAXCHAR
 #define INTERFACE_MAXCHAR 22

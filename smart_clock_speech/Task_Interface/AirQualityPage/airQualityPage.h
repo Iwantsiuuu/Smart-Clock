@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef AIRQUALITY_H_
 #define AIRQUALITY_H_
 
@@ -12,5 +14,6 @@ static void airQuality_draw();
 static void airQuality_getVal();
 static void init_airQuality_disp();
 static void deinit_airQuality_disp();
+static void speech_airQuality_cmd(uint8_t* cmd);
 
 #endif

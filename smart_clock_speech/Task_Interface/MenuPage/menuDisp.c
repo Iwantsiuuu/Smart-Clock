@@ -4,30 +4,32 @@
 #include "airQualityPage.h"
 #include "timeDatePage.h"
 
-#define tot_menu 4
+#define TOTAL_MENU 5
 
 menu_t menuObj;
 u8g2_t u8g2;
 
-uint8_t menu_cursor;
-uint8_t index_back = tot_menu;
+uint8_t CURSOR;
+uint8_t INDEX_BACK = TOTAL_MENU;
 
-typedef enum {
+enum menu_var {
 	TIME_DATE,
 	ENVIRONMENT,
 	AIRQUALITY,
-	STOPWATCH
-}menu_var;
+	STOPWATCH,
+	ALARM
+};
 
-const char *menTest[]={
+const char *MENU_SMART_CLOCK[]={
 		"TIME AND DATE",
 		"ENVIRONMENT",
 		"AIR QUALITY",
-		"STOPWATCH"
+		"STOPWATCH",
+		"ALARM"
 };
 
-const char title_menu[] = {
-		"Menu Page"
+const char TITLE_MENU[9] = {
+		"MENU PAGE"
 };
 
 void init_menu_disp(){
@@ -38,10 +40,10 @@ void init_menu_disp(){
 
 	interface_construct(&menuObj, &u8g2);
 	interface_begin(&menuObj);
-	interface_setTitle(&menuObj, title_menu);
-	interface_set_menu(&menuObj, menTest, tot_menu);
+	interface_setTitle(&menuObj, TITLE_MENU);
+	interface_set_menu(&menuObj, MENU_SMART_CLOCK, TOTAL_MENU);
 	interface_clearAll(&menuObj);
-	menu_cursor=255;
+	CURSOR=255;
 }
 
 void deinit_menu_disp(){
@@ -51,21 +53,29 @@ void deinit_menu_disp(){
 	interface_clearAll(&menuObj);
 }
 
-void menu_enter(uint8_t disp){
-	switch(disp){
+void menu_enter(uint8_t *disp){
+	switch(*disp){
 	case TIME_DATE :
 		//		Function setting time and date
 		rtc_disp();
 		break;
+
 	case ENVIRONMENT :
 		//		Function BMP Value
 		environment_disp();
 		break;
+
 	case AIRQUALITY :
 		//		Function PASCO2
 		airQuality_disp();
 		break;
+
 	case STOPWATCH :
+		//		Function StopWatch
+		stopWatch_disp();
+		break;
+
+	case ALARM :
 		//		Function StopWatch
 		stopWatch_disp();
 		break;
@@ -82,15 +92,18 @@ void menu_disp(){
 	init_menu_disp();
 
 	while (1){
-		if (menu_cursor != 255){
-			if (menu_cursor == index_back){
+
+		speech_menu_cmd(&speech_command);
+
+		if (CURSOR != 255){
+			if (CURSOR == INDEX_BACK){
 				u8g2_ClearBuffer(&u8g2);
 				main_page();
 				break;
 			}
 			else{
 				deinit_menu_disp();
-				menu_enter(menu_cursor);
+				menu_enter(&CURSOR);
 				init_menu_disp();
 			}
 		}
@@ -110,11 +123,41 @@ static void down_Cb(){
 }
 
 static void ok_Cb(){
-	menu_cursor = interface_getPosition(&menuObj);
+	CURSOR = interface_getPosition(&menuObj);
 }
 
 static void back_Cb(){
 
 	//	Jika page sedang di dalam menu setting jam/tanggal maka akan kembali ke menu page
-	menu_cursor = index_back; //index_back
+	CURSOR = INDEX_BACK; //INDEX_BACK
+}
+
+static void speech_menu_cmd(uint8_t *cmd){
+
+	switch(*cmd)
+	{
+	case BACK_CMD:
+		CURSOR = INDEX_BACK;
+		break;
+
+	case CLOCK_SETTING_CMD:
+		CURSOR = TIME_DATE;
+		break;
+
+	case ENVIRONMENT_CMD:
+		CURSOR = ENVIRONMENT;
+		break;
+
+	case AIR_QUALITY_CMD:
+		CURSOR = AIRQUALITY;
+		break;
+
+	case STOPWATCH_CMD:
+		CURSOR = STOPWATCH;
+		break;
+
+	case ALARM_SETTING_CMD:
+		CURSOR = ALARM;
+		break;
+	}
 }

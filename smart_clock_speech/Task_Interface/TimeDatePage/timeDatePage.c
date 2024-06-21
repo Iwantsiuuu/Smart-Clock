@@ -81,6 +81,9 @@ static void rtc_draw(){
 void rtc_disp(){
 	init_rtc_disp();
 	while (1){
+
+		speech_time_set_cmd(&speech_command);
+
 		if (THIS_PAGE == RTC_PAGE)
 			rtc_draw();
 		else{
@@ -143,6 +146,7 @@ static void increment_var_cb(){
 		break;
 	}
 }
+
 static void decrement_var_cb(){
 	switch (current_var){
 	case Hour :
@@ -180,14 +184,26 @@ static void decrement_var_cb(){
 		break;
 	}
 }
+
 static void switch_var_cb(){
 	current_var++;
 	if (current_var > num_var)
 		current_var = 0;
 }
+
 static void confirm_cb(){
 	confirm_flag = true;
 }
+
 static void back_rtc_cb(){
 	THIS_PAGE = idx_back; //index_back
+}
+
+static void speech_time_set_cmd(uint8_t* cmd){
+	switch(*cmd)
+	{
+	case BACK_CMD:
+		THIS_PAGE = idx_back; //index_back
+		break;
+	}
 }

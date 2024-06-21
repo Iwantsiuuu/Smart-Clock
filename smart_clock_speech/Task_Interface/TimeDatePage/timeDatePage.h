@@ -16,6 +16,7 @@ static void decrement_var_cb();
 static void switch_var_cb();
 static void confirm_cb();
 static void back_rtc_cb();
+static void speech_time_set_cmd(uint8_t* cmd);
 
 extern bool confirm_flag;
 
